@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="home.css" />
+  <title>Movies</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapper wrapper">
+      <div class="header-left">
+        <a href=""><i class="fas fa-dragon  fa-3x"></i></a>
+        <input class="search-value" type="search" name="search" placeholder="Search" />
+        <button class="search-button button shadow">Search</button>
+      </div>
+      <div class="header-right">
+        <button class="login-button button shadow">Login</button>
+        <button class="register-button button shadow">Register</button>
+        <button class="new-movie-button button shadow">Add New Movie</button>
+      </div>
+    </div>
+  </header>
+  <div class="content-wrapper wrapper">
+    <section>
+      <div id="movie-article"></div>
+    </section>
+    <aside class="container-shadow">
+      <p>Top Rated Movies By Genre</p>
+      <div class="navigation-menu">
+        <ul>
+          <li>
+            <img class="navigation-menu-image" src="images/animation.jpg" />
+            <a href="">Animation</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/action.jpg" />
+            <a href="">Action</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/adventure.jpg" />
+            <a href="">Adventure</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/crime.jpg" />
+            <a href="">Crime</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/comedy.jpg" />
+            <a href="">Comedy</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/drama.jpg" />
+            <a href="">Drama</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/fantasy.jpg" />
+            <a href="">Fantasy</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/family.jpg" />
+            <a href="">Family</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/horror.jpg" />
+            <a href="">Horror</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/mistery.jpg" />
+            <a href="">Mystery</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/sci-fi.jpg" />
+            <a href="">Sci-fi</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/short.jpg" />
+            <a href="">Short</a>
+          </li>
+          <li>
+            <img class="navigation-menu-image" src="images/thriller.jpg" />
+            <a href="">Thriller</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-logo shadow">
+      <i class="fas fa-dragon  fa-3x"></i>
+      <span>Dragons Team</span>
+    </div>
+    <div class="footer-details wrapper">
+      <button class="regenerate-button button shadow"><i class="fas fa-sync"></i></button>
+      <div class="footer-contact">
+        <p>Contact us:</p>
+        <a href=""><i class="fab fa-facebook-f shadow"></i></a>
+        <a href=""><i class="fab fa-twitter shadow"></i></a>
+        <a href=""><i class="fab fa-instagram shadow"></i></a>
+        <a href=""><i class="fab fa-youtube-square shadow"></i></a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p> <i class="far fa-copyright"></i>2019 dragons team. all rights reserved</p>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="../models/MovieList.js"></script>
+  <script type="text/javascript" src="../views/home.js"></script>
+  <div id="movie-template">
+    <a href="" class="movie-title"></a>
+  </div>
+</body>
+
+</html>
