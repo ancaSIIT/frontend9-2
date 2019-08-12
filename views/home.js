@@ -28,3 +28,11 @@ function regenerate() {
       location.reload();
     })
 }
+
+document.querySelector(".login-button").addEventListener("click", function() {
+  document.querySelector(".login-modal").style.display = "flex";
+});
+
+document.querySelector('.login-close').addEventListener('click', function() {
+  document.querySelector('.login-modal').style.display = 'none';
+});
