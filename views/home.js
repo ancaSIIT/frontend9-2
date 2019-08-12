@@ -128,10 +128,20 @@ function regenerate() {
 //     .then(function () {
 //       location.reload();
 //     })
-  
+
 
 document.querySelector(".login-button").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
+});
+
+document.querySelector("#btnLogin").addEventListener("click", function(e) {
+    e.preventDefault();
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  console.log(username, password);
+  let auth = new Auth();
+  auth.login(username, password);
+
 });
 
 document.querySelector('.login-close').addEventListener('click', function() {
