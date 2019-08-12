@@ -14,16 +14,6 @@ Movie.prototype.get = function() {
   });
 };
 
-Movie.prototype.getall = function() {
-  return fetch(`${baseUrl}/movies`).then(response => {
-  console.log("response", response);
-  if (response.ok) {
-    return response.json();
-  }
-  throw new Error("A network error occured", response.status);
-  });
-};
-
 function deleteMovieFromApi(
   movieId,
   authenticationToken

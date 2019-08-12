@@ -4,9 +4,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="movieDetails.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <title>Movie Details</title>
 </head>
 <body>
+  <header>
+    <div class="header-wrapper wrapper">
+      <div class="header-left">
+        <a href=""><i class="fas fa-dragon  fa-3x"></i></a>
+        <input class="search-value" type="search" name="search" placeholder="Search" />
+        <button class="search-button button shadow">Search</button>
+      </div>
+      <div class="header-right">
+        <button class="login-button button shadow">Login</button>
+        <button class="register-button button shadow">Register</button>
+      </div>
+    </div>
+  </header>
   <div class="wrapper-border upper"></div>
   <div class="container">
     <h2 class="title"></h2>
@@ -14,7 +29,7 @@
     <div class="image">
       <img class="posterUrl" alt="Poster" />
     </div>
-    <div class="details">
+    <section class="details">
       <p>Year:
         <span class="year"> </span>
       </p>
@@ -30,12 +45,32 @@
       <p>Imdb Rating:
         <span class="imdbRating"></span>
       </p>
-    </div>
+    </section>
     <button class="edit-button" name="button">Edit</button>
+    <button class="delete-button" name="button">Delete</button>
   </div>
   <div class="wrapper-border"></div>
   <script src = "../models/Movie.js"></script>
   <script src = "../views/movieDetails.js"></script>
-
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo shadow">
+        <i class="fas fa-dragon  fa-3x"></i>
+        <span>Dragons Team</span>
+      </div>
+      <div class="footer-details wrapper">
+        <div class="footer-contact">
+          <p>Contact us:</p>
+          <a href=""><i class="fab fa-facebook-f shadow"></i></a>
+          <a href=""><i class="fab fa-twitter shadow"></i></a>
+          <a href=""><i class="fab fa-instagram shadow"></i></a>
+          <a href=""><i class="fab fa-youtube-square shadow"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p> <i class="far fa-copyright"></i>2019 dragons team. all rights reserved</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
