@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="home.css" />
+  <link rel="stylesheet" href="addModalStyles.css" media="screen">
   <title>Movies</title>
 </head>
 
@@ -21,11 +22,13 @@
       </div>
       <div class="header-right">
         <button class="login-button button shadow">Login</button>
+
         <button class="register-button button shadow">Register</button>
         <button class="new-movie-button button shadow">Add New Movie</button>
       </div>
     </div>
   </header>
+
   <div class="content-wrapper wrapper">
     <section>
       <div id="movie-article"></div>
@@ -90,6 +93,19 @@
       </div>
     </aside>
   </div>
+  <div class="login-modal">
+    <div class="content-modal">
+
+      <div class="login-close">+</div>
+      <i class="fas fa-dragon  fa-3x"></i>
+
+      <form >
+        <input class="login-input" type="text" placeholder="Userame" id="username">
+        <input class="login-input" type="password" placeholder="Password" id="password">
+        <button class="login-button-modal button shadow" id="btnLogin">Login</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-logo shadow">
@@ -110,8 +126,44 @@
       <p> <i class="far fa-copyright"></i>2019 dragons team. all rights reserved</p>
     </div>
   </footer>
-
+  <div id="addModal">
+    <div class="addModal-content">
+      <div class="addModal-header">
+        <button id= "closeAddModalBtn">X</button>
+        <h4>New Movie Details</h4>
+      </div>
+      <div class="form-content">
+      <form >
+        Title:<br>
+        <input type="text" class = "input title"><br>
+        Year:<br>
+        <input type="text" class = "input year">
+        <span class = "tooltiptext">Input a valid year between 1880 and 2021</span><br>
+        Runtime:<br>
+        <input type="text" class="input runtime"><br>
+        Genre:<br>
+        <input type="text" class="input genre"><br>
+        Language:<br>
+        <input type="text" class="input language">
+      </form>
+      <form>
+        Plot:<br>
+        <textarea class ="input plot" ></textarea><br>
+        PosterUrl:<br>
+        <input type="text" class="input poster"><br>
+        IMDB Rating:<br>
+        <input type="text" class="input imdbRating">
+       </form>
+      </div>
+      <div class="addButtons">
+        <button id="saveAddBtn">Save</button>
+        <button id="clearAddBtn">Clear</button>
+        <button id="cancelAddBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript" src="../models/MovieList.js"></script>
+  <script type="text/javascript" src="../models/Auth.js"></script>
   <script type="text/javascript" src="../views/home.js"></script>
   <div id="movie-template">
     <a href="" class="movie-title"></a>

@@ -245,3 +245,51 @@ footer {
   font-size: 12px;
   opacity: 0.2;
 }
+<<<<<<< HEAD
+=======
+
+.login-modal {
+  width: 100%;
+  height: 100%;
+  background-color:rgba(192,192,192,0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.content-modal {
+  width: 500px;
+  height: 300px;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border: 1px solid rgb(20, 29, 40);
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
+}
+
+.content-modal i {
+  color: red;
+  padding: 20px;
+}
+
+.login-input {
+  width: 60%;
+  display: block;
+  margin: 15px auto;
+}
+
+.login-close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 40px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  color: white;
+}
+>>>>>>> def37ce5a9af0acc8cd1f3a05b8e50a8f2a03eb4
