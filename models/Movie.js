@@ -18,13 +18,13 @@ window.deleteMovieFromApi = function deleteMovieFromApi(
 
 window.editMovieFromApi = function deleteMovieFromApi(movieId, titleValue) {
   var data = {
-    Title: titleValue
-    Year: yearValue
-    Language: languageValue
-    Runtime: runtimeValue
-    Poster: posterValue
-    Genre: genreValue
-    imdbRating: imdbRatingValue    
+    Title: titleValue,
+    Year: yearValue,
+    Language: languageValue,
+    Runtime: runtimeValue,
+    Poster: posterValue,
+    Genre: genreValue,
+    imdbRating: imdbRatingValue
   };
   return fetch(this.baseUrl + "/movies/" + movieId, {
     method: "PUT",
