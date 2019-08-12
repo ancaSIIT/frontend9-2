@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="modalDelete.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-      crossorigin="anonymous"
-    />
-    <title>Delete Movie</title>
-  </head>
-  <body>
-    <button id="myBtn">Delete</button>
-    <button id="myBtn">Edit</button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Are you sure you want to delete this movie?</p>
-        <button class="buttonYes">YES</button>
-        <button class="buttonNo">NO</button>
-        <div class="footer-logo">
-          <i class="fas fa-dragon"></i>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="movieDetails.css">
+  <title>Movie Details</title>
+</head>
+<body>
+  <div class="wrapper-border upper"></div>
+  <div class="container">
+    <h2 class="title"></h2>
+    <p class="plot"></p>
+    <div class="image">
+      <img class="posterUrl" alt="Poster" />
     </div>
+    <div class="details">
+      <p>Year:
+        <span class="year"> </span>
+      </p>
+      <p>Language:
+        <span class="language"></span>
+      </p>
+      <p>Runtime:
+        <span class="runtime"></span>
+      </p>
+      <p>Genre:
+        <span class="genre"></span>
+      </p>
+      <p>Imdb Rating:
+        <span class="imdbRating"></span>
+      </p>
+    </div>
+    <button class="edit-button" name="button">Edit</button>
+  </div>
+  <div class="wrapper-border"></div>
+  <script src = "../models/Movie.js"></script>
+  <script src = "../views/movieDetails.js"></script>
 
-    <script src="../models/Movie.js"></script>
-    <script src="../views/movieDetails.js"></script>
-    <script src="../views/modalDelete.js"></script>
-  </body>
+</body>
 </html>

@@ -10,6 +10,9 @@ function createMovies(movieList) {
     clonedElement = movieTemplate.cloneNode(true);
     clonedElement.classList.add("movie-container","container-shadow");
 
+    let linkedElement = clonedElement.querySelector("a");
+    linkedElement.href = "movieDetails.html?id=" + movie._id;
+
     let titleElement = clonedElement.querySelector(".movie-title");
     titleElement.innerText = movie.Title;
     clonedElement.id = movie._id;

@@ -1,6 +1,30 @@
-baseUrl = "https://movies-api-siit.herokuapp.com";
+var baseUrl = "https://movies-api-siit.herokuapp.com"
 
-window.deleteMovieFromApi = function deleteMovieFromApi(
+function Movie(options = {}) {
+  this.id = options.id;
+}
+
+Movie.prototype.get = function() {
+  return fetch(`${baseUrl}/movies/${this.id}`).then(response => {
+  console.log("response", response);
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error("A network error occured", response.status);
+  });
+};
+
+Movie.prototype.getall = function() {
+  return fetch(`${baseUrl}/movies`).then(response => {
+  console.log("response", response);
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error("A network error occured", response.status);
+  });
+};
+
+function deleteMovieFromApi(
   movieId,
   authenticationToken
 ) {
@@ -16,15 +40,15 @@ window.deleteMovieFromApi = function deleteMovieFromApi(
   });
 };
 
-window.editMovieFromApi = function deleteMovieFromApi(movieId, titleValue) {
+function deleteMovieFromApi(movieId, titleValue) {
   var data = {
-    Title: titleValue
-    Year: yearValue
-    Language: languageValue
-    Runtime: runtimeValue
-    Poster: posterValue
-    Genre: genreValue
-    imdbRating: imdbRatingValue    
+    Title: titleValue,
+    Year: yearValue,
+    Language: languageValue,
+    Runtime: runtimeValue,
+    Poster: posterValue,
+    Genre: genreValue,
+    imdbRating: imdbRatingValue
   };
   return fetch(this.baseUrl + "/movies/" + movieId, {
     method: "PUT",
