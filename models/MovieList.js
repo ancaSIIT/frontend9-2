@@ -39,7 +39,7 @@ class Movies {
       imdbRating: this.imdbRating
     };
              console.log(this);
-   
+
         return fetch(baseUrl + "/movies", {
              method: "POST",
              body: JSON.stringify(data),
@@ -51,12 +51,7 @@ class Movies {
              return response.json();
            });
          };
-   
-        }
 
+       }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> def37ce5a9af0acc8cd1f3a05b8e50a8f2a03eb4
 var movies = new Movies();

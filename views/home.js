@@ -122,23 +122,11 @@ function addMovie() {
   regenerateMovieButton.addEventListener("click", regenerate);
 
 function regenerate() {
-<<<<<<< HEAD
- movies.regenerateMovie()
-    .then(function () {
-      location.reload();
-    })
-}
-=======
     movies.regenerateMovie()
        .then(function () {
           location.reload();
     });
 }
-//  movies.regenerateMovie()
-//     .then(function () {
-//       location.reload();
-//     })
-
 
 document.querySelector(".login-button").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
@@ -157,4 +145,3 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
 document.querySelector('.login-close').addEventListener('click', function() {
   document.querySelector('.login-modal').style.display = 'none';
 });
->>>>>>> def37ce5a9af0acc8cd1f3a05b8e50a8f2a03eb4
