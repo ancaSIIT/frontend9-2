@@ -249,7 +249,7 @@ footer {
 .login-modal {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color:rgba(192,192,192,0.5);
   position: fixed;
   top: 0;
   display: flex;
@@ -261,15 +261,22 @@ footer {
 .content-modal {
   width: 500px;
   height: 300px;
-  background-color: white;
-  border-radius: 5px;
+  background-color: black;
+  border-radius: 10px;
   text-align: center;
   padding: 20px;
   position: relative;
+  border: 1px solid rgb(20, 29, 40);
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
+}
+
+.content-modal i {
+  color: red;
+  padding: 20px;
 }
 
 .login-input {
-  width: 50%;
+  width: 60%;
   display: block;
   margin: 15px auto;
 }
@@ -281,5 +288,5 @@ footer {
   font-size: 40px;
   transform: rotate(45deg);
   cursor: pointer;
-  color: black;
+  color: white;
 }
