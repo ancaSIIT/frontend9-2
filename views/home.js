@@ -156,4 +156,5 @@ document.querySelector('.reg-close').addEventListener('click', function() {
 
 document.querySelector('.message a').addEventListener('click', function() {
   document.querySelector(".reg-modal").style.display = "flex";
+  document.querySelector(".login-modal").style.display = "none";
 })
