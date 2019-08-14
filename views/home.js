@@ -127,7 +127,7 @@ function regenerate() {
           location.reload();
     });
 }
-
+//Login Button
 document.querySelector(".login-button").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
 });
@@ -145,3 +145,20 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
 document.querySelector('.login-close').addEventListener('click', function() {
   document.querySelector('.login-modal').style.display = 'none';
 });
+document.querySelector('.message a').addEventListener('click', function() {
+  document.querySelector(".reg-modal").style.display = "flex";
+  document.querySelector('.login-modal').style.display = 'none';
+})
+
+//Register Button
+document.querySelector(".register-button").addEventListener("click", function() {
+  document.querySelector(".reg-modal").style.display = "flex";
+});
+document.querySelector('.reg-close').addEventListener('click', function() {
+  document.querySelector('.reg-modal').style.display = 'none';
+});
+
+document.querySelector('.messageb a').addEventListener('click', function() {
+  document.querySelector(".login-modal").style.display = "flex";
+  document.querySelector('.reg-modal').style.display = 'none';
+})
