@@ -1,10 +1,7 @@
-//replace the hardcoded id with movieId
 var movieId = getQueryValue("id");
-console.log("Movie ID ", movieId);
 
 const movie = new Movie({ id: movieId });
 movie.get().then(data => {
-  console.log(data);
   displayMovieHtml(data)
 })
   .catch(error => {

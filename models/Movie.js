@@ -1,18 +1,19 @@
 var baseUrl = "https://movies-api-siit.herokuapp.com";
 
-function Movie(options = {}) {
-  this.id = options.id;
+class Movie {
+  constructor (options = {}) {
+    this.id = options.id;
+  }
+  get() {
+    return fetch(`${baseUrl}/movies/${this.id}`)
+     .then(response => {
+       if (response.ok) {
+        return response.json();
+        }
+        throw new Error("A network error occured", response.status);
+      });
+  };
 }
-
-Movie.prototype.get = function () {
-  return fetch(`${baseUrl}/movies/${this.id}`).then(response => {
-    console.log("response", response);
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error("A network error occured", response.status);
-  });
-};
 
 function deleteMovieFromApi(movieId) {
   var url = baseUrl + "/movies/" + movieId;
@@ -27,5 +28,3 @@ function deleteMovieFromApi(movieId) {
     return response.text();
   });
 };
-
-

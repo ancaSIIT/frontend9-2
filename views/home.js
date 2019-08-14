@@ -1,5 +1,3 @@
-
-
 movies.getMovies()
   .then(function (movieList) {
     console.log(movieList);

@@ -28,7 +28,6 @@ buttonNo.onclick = () => {
 function deleteMovie() {
   deleteMovieFromApi(movieId).then(data => {
     console.log("deleted", data);
-    history.back();
+    location.assign("home.html");
   });
-
 }
