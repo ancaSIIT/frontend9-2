@@ -147,6 +147,7 @@ document.querySelector('.login-close').addEventListener('click', function() {
 });
 document.querySelector('.message a').addEventListener('click', function() {
   document.querySelector(".reg-modal").style.display = "flex";
+  document.querySelector('.login-modal').style.display = 'none';
 })
 
 //Register Button
@@ -159,4 +160,5 @@ document.querySelector('.reg-close').addEventListener('click', function() {
 
 document.querySelector('.messageb a').addEventListener('click', function() {
   document.querySelector(".login-modal").style.display = "flex";
+  document.querySelector('.reg-modal').style.display = 'none';
 })

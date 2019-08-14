@@ -337,3 +337,8 @@ footer {
   color: red;
   padding: 20px;
 }
+
+.reg-content a {
+  color: red;
+  text-decoration: none;
+}
