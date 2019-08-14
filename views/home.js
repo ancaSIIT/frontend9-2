@@ -153,3 +153,7 @@ document.querySelector(".register-button").addEventListener("click", function() 
 document.querySelector('.reg-close').addEventListener('click', function() {
   document.querySelector('.reg-modal').style.display = 'none';
 });
+
+document.querySelector('.message a').addEventListener('click', function() {
+  document.querySelector(".reg-modal").style.display = "flex";
+})

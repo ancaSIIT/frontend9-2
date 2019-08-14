@@ -290,6 +290,12 @@ footer {
   cursor: pointer;
   color: white;
 }
+
+.message a {
+  color: red;
+  text-decoration: none;
+}
+
 .reg-modal{
   width: 100%;
   height: 100%;
