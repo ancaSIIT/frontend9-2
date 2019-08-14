@@ -56,8 +56,7 @@ footer {
   margin-right: auto;
 }
 
-.edit-button,
-.delete-button {
+button {
   width: 80px;
   height: 30px;
   font-size: 12px;
