@@ -21,6 +21,7 @@
         <button class="search-button button shadow">Search</button>
       </div>
       <div class="header-right">
+        <button class="logout-button button shadow">Logout</button>
         <button class="login-button button shadow">Login</button>
         <button class="register-button button shadow">Register</button>
         <button class="new-movie-button button shadow">Add New Movie</button>
@@ -129,8 +130,11 @@
   <div id="addModal">
     <div class="addModal-content">
       <div class="addModal-header">
-        <button id= "closeAddModalBtn">X</button>
-        <h4>New Movie Details</h4>
+        <div class = "addModal-topHeader">
+          <i class="fas fa-dragon  fa-3x"></i>
+          <h4>New Movie Details</h4>
+        <button id= "closeAddModalBtn">+</button>
+        </div>
       </div>
       <div class="form-content">
       <form >
@@ -182,6 +186,7 @@
   <script type="text/javascript" src="../models/MovieList.js"></script>
   <script type="text/javascript" src="../models/Auth.js"></script>
   <script type="text/javascript" src="../views/home.js"></script>
+  <script type = "text/javascript" src="../views/authState.js"></script>
   <div id="movie-template">
     <a href="" class="movie-title"></a>
   </div>
