@@ -65,3 +65,15 @@ function deleteMovie(event) {
     grandparentElement.style.display = "none";
   });
 }
+
+
+const logoutDetailsBtn = document.querySelector(".logout-button");
+logoutDetailsBtn.addEventListener("click", logoutDetails);
+
+function logoutDetails() {
+   const logoutSession = new Auth();
+   logoutSession.logout().then(data => {
+     localStorage.removeItem("token");
+     verifyLoginDetails()
+   })
+}

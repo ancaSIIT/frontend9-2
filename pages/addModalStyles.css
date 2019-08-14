@@ -10,21 +10,36 @@
 .addModal-content {
   position: fixed;
   width: 35%;
-  background-color: rgb(20, 29, 40);
+   background-color: black; /*rgb(20, 29, 40); */
   right: 33%;
   box-shadow: 5px 5px 10px grey;
   top: 15%;
   z-index: 6;
-  border: 4px solid black;
+  border-radius: 10px;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s; 
 }
+.addModal-topHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.addModal-content i {
+  color: red;
+  padding: 10px;
+  font-size: 30px; 
+  display: block;
+
+}
 .addModal-header {
   background-color: black;
   border-bottom: 2px solid black;
   box-shadow: 1px 3px 10px rgb(20, 29, 40);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .form-content {
   display: flex;
@@ -49,28 +64,29 @@
   margin: 0 10px 10px 0;
 }
 #closeAddModalBtn {
-  background-color: white;
+  background-color: black;
   border: none;
-  color: darkgrey;
-  font-weight: bold;
-  display: block;
-  margin: 5px 5px 5px auto;
+  color: white;
+  display:block;
+  margin: 5px 14px 5px 5px;
+  padding-bottom: 5px;
+  transform: rotate(45deg);
+  font-size: 30px;
+  
 }
 #closeAddModalBtn:hover {
-  color: black;
+  color:red;
 }
 
 h4 {
-  text-align: center;
-  margin-top: 2px;
-  color: white;
+    color: white;
   font-size: 16px;
 }
 
 .addButtons {
   display: flex;
   justify-content: flex-end;
-  padding: 1px;
+  padding: 10px;
 }
 
 .addButtons button {
