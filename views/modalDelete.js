@@ -1,35 +1,34 @@
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.querySelector(".delete-button");
 
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-var buttonYes = document.getElementsByClassName("buttonYes");
+var buttonYes = document.querySelector(".button-yes");
+buttonYes.addEventListener("click", deleteMovie);
 
-var buttonNo = document.getElementsByClassName("buttonNo")[0];
+var buttonNo = document.getElementsByClassName("button-no")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
+btn.onclick = () => {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = () => {
   modal.style.display = "none";
 }
 
-buttonYes.onclick = function deleteMovieFromApi(movieId, authenticationToken) {
-  modal.style.display = "none";  
+buttonYes.onclick = () => {
+  modal.style.display = "none";
 }
 
-buttonNo.onclick = function () {
-    modal.style.display = "none";  
-  }
-// When the user clicks anywhere outside of the modal, the pop-up remains
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "block";
-  }
+buttonNo.onclick = () => {
+  modal.style.display = "none";
+}
+
+function deleteMovie() {
+  deleteMovieFromApi(movieId).then(data => {
+    console.log("deleted", data);
+    history.back();
+  });
+
 }
