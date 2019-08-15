@@ -139,7 +139,6 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
   console.log(username, password);
   let auth = new Auth();
   auth.login(username, password);
-
 });
 
 document.querySelector('.login-close').addEventListener('click', function() {
