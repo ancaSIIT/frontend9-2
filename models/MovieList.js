@@ -27,7 +27,7 @@ class Movies {
     });
   };
 
-  addMovie() {
+  add() {
     var data = {
       Title: this.Title,
       Year: this.Year,
@@ -45,13 +45,15 @@ class Movies {
              body: JSON.stringify(data),
              headers: {
               'Content-Type': 'application/json',
-              "x-Auth-Token": "6A8RUHzkLtKfJoSUNRnl45cBQRwLwxvd"
+              "x-Auth-Token": localStorage.getItem("accessToken")
               }
            }).then(response => {
              return response.json();
            });
          };
 
-       }
+   
+        }
+       
 
 var movies = new Movies();

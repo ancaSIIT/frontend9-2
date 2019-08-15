@@ -28,6 +28,7 @@ function createMovies(movieList) {
 
 const addBtn = document.querySelector(".new-movie-button");
 addBtn.addEventListener("click", addMovie);
+//addBtn.style.display = "none";
 
 function addMovie() {
   const modalElement = document.getElementById("addModal");
@@ -103,7 +104,7 @@ function addMovie() {
              Poster: posterElement.value,
              imdbRating: imdbRatingElement.value
            });
-          addNewMovie.addMovie().then(data => {
+          addNewMovie.add().then(data => {
 
           modalElement.style.display = "none";
           for(let i=0; i< inputValues.length ; i++) {
@@ -118,6 +119,18 @@ function addMovie() {
 });
 }
 
+const logoutHomeBtn = document.querySelector(".logout-button");
+logoutHomeBtn.addEventListener("click", logoutHome);
+
+function logoutHome() {
+  const logoutSession = new Auth();
+  logoutSession.logout().then(data => {
+   localStorage.removeItem("token");
+   verifyLoginHome();
+  })
+}
+
+
   let regenerateMovieButton = document.querySelector(".regenerate-button");
   regenerateMovieButton.addEventListener("click", regenerate);
 
@@ -128,6 +141,8 @@ function regenerate() {
     });
 }
 //Login Button
+
+
 document.querySelector(".login-button").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
 });
@@ -138,7 +153,10 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
   let password = document.getElementById("password").value;
   console.log(username, password);
   let auth = new Auth();
-  auth.login(username, password);
+  auth.login(username, password).then( data => {
+    console.log(data);
+  })
+
 });
 
 document.querySelector('.login-close').addEventListener('click', function() {
