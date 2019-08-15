@@ -159,23 +159,38 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
 
 });
 
-document.querySelector('.login-close').addEventListener('click', function() {
-  document.querySelector('.login-modal').style.display = 'none';
+document.querySelector(".login-close").addEventListener("click", function() {
+  document.querySelector(".login-modal").style.display = "none";
+  document.querySelector(".loginForm").reset();
 });
-document.querySelector('.message a').addEventListener('click', function() {
+document.querySelector(".message a").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "flex";
-  document.querySelector('.login-modal').style.display = 'none';
+  document.querySelector(".login-modal").style.display = "none";
 })
+
+function validateLogin() {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  if (username == null || username == "") {
+    alert("Please enter the username.");
+    return false;
+  }
+  if (password == null || password == "") {
+    alert("Please enter the password.");
+    return false;
+  }
+  alert("Login successful.");
+}
 
 //Register Button
 document.querySelector(".register-button").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "flex";
 });
-document.querySelector('.reg-close').addEventListener('click', function() {
-  document.querySelector('.reg-modal').style.display = 'none';
+document.querySelector(".reg-close").addEventListener("click", function() {
+  document.querySelector(".reg-modal").style.display = "none";
 });
 
-document.querySelector('.messageb a').addEventListener('click', function() {
+document.querySelector(".messageb a").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
-  document.querySelector('.reg-modal').style.display = 'none';
+  document.querySelector(".reg-modal").style.display = "none";
 })

@@ -99,10 +99,10 @@
       <div class="login-close">+</div>
       <i class="fas fa-dragon  fa-3x"></i>
 
-      <form >
+      <form class="loginForm" method="post">
         <input class="login-input" type="text" placeholder="Userame" id="username">
         <input class="login-input" type="password" placeholder="Password" id="password">
-        <button class="login-button-modal button shadow" id="btnLogin">Login</button>
+        <button class="login-button-modal button shadow" id="btnLogin" onclick="return validateLogin();">Login</button>
         <p class="message">Don't have an account? <a href="#">Click here.</a></p>
       </form>
     </div>
