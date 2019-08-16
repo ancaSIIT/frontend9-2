@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="movieDetails.css">
   <link rel="stylesheet" href="modalDelete.css" />
+  <link rel="stylesheet" href="modalEdit.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <title>Movie Details</title>
@@ -52,6 +53,42 @@
     </section>
     <button class="edit-button" name="button">Edit</button>
     <button class="delete-button" name="button">Delete</button>
+
+      <!-- Edit Modal -->
+    <div class="modal-shadow">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          <i class="fas fa-dragon"></i>
+          <p>Edit this movie.</p>
+          <span class="edit-close">&#935;</span>
+        </div>
+        <form>
+          <label for="title">Title:</label>
+          <input type="text" name="title" />
+          <label for="plot">Plot:</label>
+          <input type="text" name="plot" />
+          <label for="year">Year:</label>
+          <input type="text" name="year" />
+          <label for="language">Language:</label>
+          <input type="text" name="language" />
+          <label for="runtime">Runtime:</label>
+          <input type="text" name="runtime" />
+          <label for="poster">PosterUrl:</label>
+          <input type="text" name="poster" />
+          <label for="genre">Genre:</label>
+          <input type="text" name="genre" />
+          <label for="rating">Rating:</label>
+          <input type="text" name="rating" />
+        </form>
+    
+        <div class="buttons">
+          <button class="save-button">Save</button>
+          <button class="close-button">Close</button>
+        </div>
+      </div>
+    </div>
+
+      <!-- Delete Modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <div class="modal-content-header">
@@ -71,6 +108,8 @@
   <script src = "..models/Auth.js"></script>
   <script src = "../views/movieDetails.js"></script>
   <script src = "..views/authState.js"></script>
+  
+      <!-- Details Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-logo shadow">
@@ -91,7 +130,9 @@
   </footer>
   <script src="../models/Movie.js"></script>
   <script src="../views/movieDetails.js"></script>
+  <script src="../views/modalEdit.js"></script>
   <script src="../views/modalDelete.js"></script>
+
 </body>
 
 </html>

@@ -4,68 +4,102 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  background-color: black;
-  color: white;
 }
-.wrapper {
+
+.modal-shadow {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
   margin: 0 auto;
+}
+
+.modal-wrapper {
+  margin: 200px 300px;
+  border-radius: 5px;
+  border: solid 1px #888888;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(20, 29, 40);
+}
+.fa-dragon {
+  color: red;
+  margin: 18px;
+}
+.edit-close {
+  color: white;
+  margin: 10px;
+  padding: 0;
 }
 form {
   justify-content: space-evenly;
 }
+
 label {
   margin: 10px;
 }
-input {
+
+input[type="text"] {
   margin: 10px;
 }
+
 .buttons {
   display: flex;
   justify-content: flex-end;
+  background: black;
 }
-button {
-  width: 60px;
+
+button.save-button {
   margin: 10px 5px;
-  background-color: yellow;
-  border-radius: 10px;
-  border: 0;
+}
+
+button.close-button {
+  margin: 10px 10px 10px 5px;
 }
 
 @media screen and (max-width: 425px) {
   form {
-    background: red;
+    background: black;
     display: grid;
     grid-template-columns: 90%;
   }
-  .wrapper {
+  .modal-wrapper {
     width: 320px;
   }
   label {
     margin: 5px;
   }
-  input {
+  input[type="text"] {
     margin: 5px;
   }
 }
 
 @media screen and (min-width: 425px) {
   form {
-    background: green;
+    background: black;
     display: grid;
     grid-template-columns: 15% 70%;
   }
-  .wrapper {
+  .modal-wrapper {
     width: 425px;
   }
 }
 
 @media screen and (min-width: 768px) {
   form {
-    background: blue;
+    background: black;
     display: grid;
     grid-template-columns: 10% 40% 10% 40%;
   }
-  .wrapper {
+  .modal-wrapper {
     width: 768px;
   }
 }
