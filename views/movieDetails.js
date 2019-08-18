@@ -1,20 +1,11 @@
 var movieId = getQueryValue("id");
 
 const movie = new Movie({ id: movieId });
-<<<<<<< HEAD
 movie.get().then(data => {
   displayMovieHtml(data)
 })
   .catch(error => {
     document.body.innerText = "Invalid post ID";
-=======
-  movie.get().then(data => {
-    console.log(data);
-    displayMovieHtml(data)
-  })
-.catch(error => {
-  document.body.innerText = "Invalid post ID";
->>>>>>> 385092a501c5c07f8153c03ad91053d650fb77e6
   });
 
 function getQueryValue(key) {

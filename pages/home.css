@@ -291,6 +291,10 @@ footer {
   color: white;
 }
 
+.login-close:hover {
+  color:red;
+}
+
 .message a {
   color: red;
   text-decoration: none;
