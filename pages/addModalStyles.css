@@ -66,13 +66,13 @@
 #closeAddModalBtn {
   background-color: black;
   border: none;
-  color: white;
   display:block;
   margin: 5px 14px 5px 5px;
   padding-bottom: 5px;
   transform: rotate(45deg);
   font-size: 30px;
-  
+  box-shadow: none;
+
 }
 #closeAddModalBtn:hover {
   color:red;

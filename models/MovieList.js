@@ -13,8 +13,8 @@ class Movies {
   }
   baseUrl = "https://movies-api-siit.herokuapp.com";
 
-  getMovies() {
-    return fetch(this.baseUrl + "/movies")
+  getMovies(skip = null) {
+    return fetch(this.baseUrl + "/movies" + "?skip" + "=" + skip + "&take=10")
       .then(response => {
         return response.json();
       });
@@ -57,3 +57,5 @@ class Movies {
        
 
 var movies = new Movies();
+
+
