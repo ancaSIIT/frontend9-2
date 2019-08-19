@@ -1,5 +1,5 @@
 // verify login function in MovieDetailsPage
-   verifyLoginDetails();
+  // verifyLoginDetails();
 
 //replace the hardcoded id with movieId
 var movieId = getQueryValue("id");

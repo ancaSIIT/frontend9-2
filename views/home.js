@@ -7,7 +7,7 @@ window.onload = function () {
     });
 }
 // verify login function in HomePage
-  verifyLoginHome();
+ // verifyLoginHome();
 
 
 function showPage(pageNumber) {
