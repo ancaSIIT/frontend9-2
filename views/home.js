@@ -3,7 +3,7 @@ window.onload = function () {
   movies.getMovies(0)
     .then(function (movieList) {
       createPagination(movieList);
-      createMovies(movieList);
+      createMovies(movieList.results);
     });
 }
 
@@ -41,10 +41,15 @@ function createPagination(movieList) {
 }
 
 function createMovies(movieList) {
+  if (!movieList.length){
+    let movieArticle = document.getElementById("movie-article");
+    movieArticle.innerHTML= "There are no results for this search. Please try a new search with a different keyword or filter.";
+    return;
+  }
   let movieArticle = document.getElementById("movie-article");
   movieArticle.innerHTML = "";
   let movieTemplate = document.getElementById("movie-template");
-  movieList.results.forEach(movie => {
+  movieList.forEach(movie => {
 
     clonedElement = movieTemplate.cloneNode(true);
     clonedElement.classList.add("movie-container", "container-shadow");
@@ -186,14 +191,48 @@ document.querySelector(".login-button").addEventListener("click", function () {
 document.querySelector("#btnLogin").addEventListener("click", function (e) {
   e.preventDefault();
   let username = document.getElementById("username").value;
+  let usernameElement = document.getElementById("username");
   let password = document.getElementById("password").value;
+  let passwordElement = document.getElementById("password");
+  let messageElement = document.querySelector(".loginValidateMessage");
   console.log(username, password);
-  let auth = new Auth();
-  auth.login(username, password).then(data => {
-    console.log(data);
-  })
 
-});
+  if (username == "") {
+    usernameElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Please fill all fields."
+    messageElement.style.display = "inline";
+  } else {
+    usernameElement.style.border = "1px solid black";
+    messageElement.style.display = "none";
+  }
+  if (password == "") {
+    passwordElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Please fill all fields."
+    messageElement.style.display = "inline";
+  } else {
+    passwordElement.style.border = "1px solid black";
+    messageElement.style.display = "none";
+  }
+  if (username && password) {
+    let auth = new Auth();
+  auth.login(username, password).then( data => {
+    console.log(data);
+    if (data.authenticated) {
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("user", username);
+      document.querySelector(".login-modal").style.display = "none";
+    //  verifyLoginHome();
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      messageElement.style.display = "none";
+    } else {
+      messageElement.innerHTML = data.message;
+      messageElement.style.display = "inline";
+    }
+  })
+  }
+})
+
 
 document.querySelector(".login-close").addEventListener("click", function () {
   document.querySelector(".login-modal").style.display = "none";
@@ -204,19 +243,20 @@ document.querySelector(".message a").addEventListener("click", function () {
   document.querySelector(".login-modal").style.display = "none";
 })
 
-function validateLogin() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  if (username == null || username == "") {
-    alert("Please enter the username.");
-    return false;
-  }
-  if (password == null || password == "") {
-    alert("Please enter the password.");
-    return false;
-  }
-  alert("Login successful.");
-}
+// function validateLogin() {
+//   let username = document.getElementById("username").value;
+//   let password = document.getElementById("password").value;
+//   if (username == null || username == "") {
+//     alert("Please enter the username.");
+//     return false;
+//   }
+//   if (password == null || password == "") {
+//     alert("Please enter the password.");
+//     return false;
+//   }
+//   document.querySelector(".login-modal").style.display = "none";
+//   document.querySelector(".user").innerHTML = username;
+// }
 
 //Register Button
 document.querySelector(".register-button").addEventListener("click", function () {
@@ -232,4 +272,15 @@ document.querySelector(".messageb a").addEventListener("click", function () {
 })
 
 
+//range slider
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function(){
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue;
+}
+
+elem.addEventListener("input", rangeValue);
 
