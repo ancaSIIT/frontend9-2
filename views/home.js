@@ -19,7 +19,7 @@ function showPage(pageNumber) {
           page.classList.add("active");
         }
       })
-      createMovies(movieList);
+      createMovies(movieList.results);
     });
 }
 

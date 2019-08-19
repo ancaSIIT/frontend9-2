@@ -21,25 +21,17 @@ function getResultsAll(){
       let newList = [];
       newList = movieList.results;
       createMovies(newList);
+      createPagination(movieList)
+
     })
   } else {
-    movies.getAllMovies().then(function (movieList){
-      console.log(movieList);
-      let newList = [];
-      newList = movieList.results.filter(item =>{
-        const lowerCaseSearchInput = searchInputVal.toLowerCase();
-        if (item.Title.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.Genre.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.Runtime.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.Year.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.Language.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.imdbRating.toLowerCase().includes(lowerCaseSearchInput) ||
-            item.Country.toLowerCase().includes(lowerCaseSearchInput)) {
-              return item;
-            };
-      });
-      createMovies(newList);
-    })
+    const queryParams = {};
+    queryParams.title = document.querySelector(".search-value").value;
+    movies.getMoviesByTitle(queryParams).then(function (movieList) {
+    console.log(movieList);
+    createMovies(movieList.results);
+    createPagination(movieList);
+  });
   }
 
 

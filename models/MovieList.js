@@ -52,16 +52,16 @@ class Movies {
            });
          };
   
-  getAllMovies(){
-          return fetch(this.baseUrl + "/movies" + "?take=200")
-          .then(response => {
-            console.log("response", response);
-            if (response.ok){
-              return response.json();
-            }
-            return new Error("A network error occurred", response.status);
-          });
-        }
+  getMoviesByTitle(opts) {
+    return fetch(this.baseUrl + "/movies" + "?take=10" + "&Title=" + opts.title)
+    .then(response => { 
+      console.log("response", response);
+      if (response.ok){
+      return response.json();
+      }
+      return new Error("A network error occurred", response.status);
+    });
+  }
      
   getMoviesWithFilters(filtersObj) {
           //make the obj to string
