@@ -6,6 +6,9 @@ window.onload = function () {
       createMovies(movieList.results);
     });
 }
+// verify login function in HomePage
+ // verifyLoginHome();
+
 
 function showPage(pageNumber) {
   let skip = (pageNumber * 10) - 10;
@@ -66,9 +69,11 @@ function createMovies(movieList) {
   });
 }
 
+
+// Add Button
 const addBtn = document.querySelector(".new-movie-button");
 addBtn.addEventListener("click", addMovie);
-//addBtn.style.display = "none";
+
 
 function addMovie() {
   const modalElement = document.getElementById("addModal");
@@ -159,15 +164,17 @@ function addMovie() {
   });
 }
 
-//Nu merge deoarece nu exista button de Logout pe home page, acesta trebuie creat dupa ce se face login si il inlocuieste
-// const logoutHomeBtn = document.querySelector(".logout-button");
-// logoutHomeBtn.addEventListener("click", logoutHome);
+
+const logoutHomeBtn = document.querySelector(".logout-button");
+logoutHomeBtn.addEventListener("click", logoutHome);
 
 function logoutHome() {
   const logoutSession = new Auth();
   logoutSession.logout().then(data => {
-    localStorage.removeItem("token");
-    verifyLoginHome();
+   localStorage.removeItem("accessToken");
+   localStorage.removeItem("user");
+   verifyLoginHome();
+   //console.log(localStorage.getItem("accessToken"));
   })
 }
 
@@ -232,6 +239,7 @@ document.querySelector("#btnLogin").addEventListener("click", function (e) {
   })
   }
 })
+  
 
 
 document.querySelector(".login-close").addEventListener("click", function () {
@@ -243,20 +251,7 @@ document.querySelector(".message a").addEventListener("click", function () {
   document.querySelector(".login-modal").style.display = "none";
 })
 
-// function validateLogin() {
-//   let username = document.getElementById("username").value;
-//   let password = document.getElementById("password").value;
-//   if (username == null || username == "") {
-//     alert("Please enter the username.");
-//     return false;
-//   }
-//   if (password == null || password == "") {
-//     alert("Please enter the password.");
-//     return false;
-//   }
-//   document.querySelector(".login-modal").style.display = "none";
-//   document.querySelector(".user").innerHTML = username;
-// }
+
 
 //Register Button
 document.querySelector(".register-button").addEventListener("click", function () {

@@ -1,9 +1,10 @@
+//Buttons classes
 let editButton = document.querySelector(".edit-button");
 let editModal = document.querySelector(".modal-shadow");
 let editClose = document.querySelector(".edit-close");
 let saveButton = document.querySelector(".save-button");
 let closeButton = document.querySelector(".close-button");
-
+//Details classes
 let title = document.querySelector(".title");
 let plot = document.querySelector(".plot");
 let year = document.querySelector(".year");
@@ -12,15 +13,15 @@ let runtime = document.querySelector(".runtime");
 let poster = document.querySelector(".posterUrl");
 let genre = document.querySelector(".genre");
 let imdbRating = document.querySelector(".imdbRating");
-
-let inputTitle = document.getElementsByTagName("input")[1];
-let inputPlot = document.getElementsByTagName("input")[2];
-let inputYear = document.getElementsByTagName("input")[3];
-let inputLanguage = document.getElementsByTagName("input")[4];
-let inputRuntime = document.getElementsByTagName("input")[5];
-let inputPoster = document.getElementsByTagName("input")[6];
-let inputGenre = document.getElementsByTagName("input")[7];
-let inputImdbRating = document.getElementsByTagName("input")[8];
+//Input classes
+let inputTitle = document.querySelector(".title-input");
+let inputPlot = document.querySelector(".plot-input");
+let inputYear = document.querySelector(".year-input");
+let inputLanguage = document.querySelector(".language-input");
+let inputRuntime = document.querySelector(".runtime-input");
+let inputPoster = document.querySelector(".poster-input");
+let inputGenre = document.querySelector(".genre-input");
+let inputImdbRating = document.querySelector(".rating-input");
 
 editButton.onclick = () => {
   inputTitle.setAttribute("value", title.innerHTML);
@@ -56,8 +57,7 @@ saveButton.onclick = data => {
   editData.imdbRating = data.path[2].children[1].children[15].value;
   editData.id = movieId;
 
-  editData.update(editData).then(data => {
+  editData.update(editData).then(() => {
     editModal.style.display = "none";
-    location.reload(true);
   });
 };
