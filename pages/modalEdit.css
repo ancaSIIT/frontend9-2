@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   background: rgb(20, 29, 40);
 }
-.fa-dragon {
+.logo-edit {
   color: red;
   margin: 18px;
 }
@@ -38,6 +38,7 @@ body {
   color: white;
   margin: 10px;
   padding: 0;
+  cursor: pointer;
 }
 form {
   justify-content: space-evenly;
