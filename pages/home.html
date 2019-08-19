@@ -29,13 +29,162 @@
   </header>
 
   <div class="content-wrapper wrapper">
-    <section>
-      <div id="movie-article"></div>
-    </section>
     <aside class="container-shadow">
-      <p>Top Rated Movies By Genre</p>
+      <p>ADD FILTERS</p>
       <div class="navigation-menu">
-        <ul>
+          <div><h4>Genre</h4>
+            <form>
+              <input type="radio" name="genre" value="All" checked> All<br>
+              <input type="radio" name="genre" value="action"> Action<br>
+              <input type="radio" name="genre" value="adventure"> Adventure<br>
+              <input type="radio" name="genre" value="animation"> Animation<br>
+              <input type="radio" name="genre" value="comedy"> Comedy<br>
+              <input type="radio" name="genre" value="documentary"> Documentary<br>
+              <input type="radio" name="genre" value="horror"> Horror<br>
+              <input type="radio" name="genre" value="mystery"> Mystery<br>
+              <input type="radio" name="genre" value="fan-sci"> Fantasy and Sci-Fi<br>
+              <input type="radio" name="genre" value="short"> Short<br>
+              <input type="radio" name="genre" value="thriller"> Thriller
+            </form>
+          </div>
+          <div><h4>Language</h4>
+            <form>
+              <input type="radio" name="language" value="All" checked> All<br>
+              <input type="radio" name="language" value="English"> English<br>
+              <input type="radio" name="language" value="Romanian"> Romanian<br>
+              <input type="radio" name="language" value="French"> French<br>
+              <input type="radio" name="language" value="German"> German<br>
+              <input type="radio" name="language" value="Spanish"> Spanish<br>
+              <input type="radio" name="language" value="Japanese"> Japanese<br>
+              <input type="radio" name="language" value="Mandarin"> Mandarin
+            </form>
+          </div>
+          <div><h4>Year</h4>
+            <div id="scrollDownYears">
+            <form>
+              <input type="radio" name="year" value="All" checked> All<br>
+              <input type="radio" name="year" value="1970"> 1970<br>
+              <input type="radio" name="year" value="1971"> 1971<br>
+              <input type="radio" name="year" value="1972"> 1972<br>
+              <input type="radio" name="year" value="1973"> 1973<br>
+              <input type="radio" name="year" value="1974"> 1974<br>
+              <input type="radio" name="year" value="1975"> 1975<br>
+              <input type="radio" name="year" value="1976"> 1976<br>
+              <input type="radio" name="year" value="1977"> 1977<br>
+              <input type="radio" name="year" value="1978"> 1978<br>
+              <input type="radio" name="year" value="1979"> 1979<br>
+              <input type="radio" name="year" value="1980"> 1980<br>
+              <input type="radio" name="year" value="1981"> 1981<br>
+              <input type="radio" name="year" value="1982"> 1982<br>
+              <input type="radio" name="year" value="1983"> 1983<br>
+              <input type="radio" name="year" value="1984"> 1984<br>
+              <input type="radio" name="year" value="1985"> 1985<br>
+              <input type="radio" name="year" value="1986"> 1986<br>
+              <input type="radio" name="year" value="1987"> 1987<br>
+              <input type="radio" name="year" value="1988"> 1988<br>
+              <input type="radio" name="year" value="1989"> 1989<br>
+              <input type="radio" name="year" value="1990"> 1990<br>
+              <input type="radio" name="year" value="1991"> 1991<br>
+              <input type="radio" name="year" value="1992"> 1992<br>
+              <input type="radio" name="year" value="1993"> 1993<br>
+              <input type="radio" name="year" value="1994"> 1994<br>
+              <input type="radio" name="year" value="1995"> 1995<br>
+              <input type="radio" name="year" value="1996"> 1996<br>
+              <input type="radio" name="year" value="1997"> 1997<br>
+              <input type="radio" name="year" value="1998"> 1998<br>
+              <input type="radio" name="year" value="1999"> 1999<br>
+              <input type="radio" name="year" value="2000"> 2000<br>
+              <input type="radio" name="year" value="2001"> 2001<br>
+              <input type="radio" name="year" value="2002"> 2002<br>
+              <input type="radio" name="year" value="2003"> 2003<br>
+              <input type="radio" name="year" value="2004"> 2004<br>
+              <input type="radio" name="year" value="2005"> 2005<br>
+              <input type="radio" name="year" value="2006"> 2006<br>
+              <input type="radio" name="year" value="2007"> 2007<br>
+              <input type="radio" name="year" value="2008"> 2008<br>
+              <input type="radio" name="year" value="2009"> 2009<br>
+              <input type="radio" name="year" value="2010"> 2010<br>
+              <input type="radio" name="year" value="2011"> 2011<br>
+              <input type="radio" name="year" value="2012"> 2012<br>
+              <input type="radio" name="year" value="2013"> 2013<br>
+              <input type="radio" name="year" value="2014"> 2014<br>
+              <input type="radio" name="year" value="2015"> 2015<br>
+              <input type="radio" name="year" value="2016"> 2016<br>
+              <input type="radio" name="year" value="2017"> 2017<br>
+              <input type="radio" name="year" value="2018"> 2018<br>
+              <input type="radio" name="year" value="2019"> 2019<br>
+              <input type="radio" name="year" value="2020"> 2020
+            </form>
+            </div>
+          </div>
+          <div><h4>Country</h4>
+            <form>
+              <input type="radio" name="country" value="All" checked> All<br>
+              <input type="radio" name="country" value="uk"> UK<br>
+              <input type="radio" name="country" value="USA"> USA<br>
+              <input type="radio" name="country" value="romania"> Romania<br>
+              <input type="radio" name="country" value="denmark"> Denmark<br>
+              <input type="radio" name="country" value="philippines"> Philippines<br>
+              <input type="radio" name="country" value="japan"> Japan
+            </form>
+          </div>
+          <div><h4>Rating</h4>
+
+            <!-- <form name="registrationForm">
+                <input type="range" name="ageInputName" id="ageInputId" value="0.10" min="0" max="10" step="0.1" oninput="ageOutputId.value = ageInputId.value">
+                <output name="ageOutputName" id="ageOutputId">10</output>
+            </form> -->
+            <div class="value">0</div>
+              <input type="range" min="0" max="10" step="0.1" value="0">
+            </br>
+            </br>
+          </div>
+
+          <!--
+          <label class="container-checkbox">Action & Adventure
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Drama
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Horror
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Romance
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Comedy
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sci-Fi
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <h4>Year</h4>
+          <label class="container-checkbox">1990-2000
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">2001-2007
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">2008-2013
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">2014-2019
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <img src="../assets/pictures/filter-movie.png" alt=""> -->
+      
+      <!-- <ul>
           <li>
             <img class="navigation-menu-image" src="images/animation.jpg" />
             <a href="">Animation</a>
@@ -88,9 +237,12 @@
             <img class="navigation-menu-image" src="images/thriller.jpg" />
             <a href="">Thriller</a>
           </li>
-        </ul>
-      </div>
+        </ul> -->
+        </div>
     </aside>
+    <section>
+      <div id="movie-article"></div>
+    </section>
   </div>
   <div class="login-modal">
     <div class="content-modal">
@@ -186,8 +338,10 @@
 
   <script type="text/javascript" src="../models/MovieList.js"></script>
   <script type="text/javascript" src="../models/Auth.js"></script>
+  <script type="text/javascript" src="../models/SearchFilter.js"></script>
   <script type="text/javascript" src="../views/home.js"></script>
   <script type="text/javascript" src="../views/authState.js"></script>
+  <script type="text/javascript" src="../views/filter.js"></script>>
   <div id="movie-template">
     <a href="" class="movie-title"></a>
   </div>

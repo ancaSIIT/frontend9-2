@@ -3,7 +3,7 @@ window.onload = function () {
   movies.getMovies(0)
     .then(function (movieList) {
       createPagination(movieList);
-      createMovies(movieList);
+      createMovies(movieList.results);
     });
 }
 
@@ -41,10 +41,15 @@ function createPagination(movieList) {
 }
 
 function createMovies(movieList) {
+  if (!movieList.length){
+    let movieArticle = document.getElementById("movie-article");
+    movieArticle.innerHTML= "There are no results for this search. Please try a new search with a different keyword or filter.";
+    return;
+  }
   let movieArticle = document.getElementById("movie-article");
   movieArticle.innerHTML = "";
   let movieTemplate = document.getElementById("movie-template");
-  movieList.results.forEach(movie => {
+  movieList.forEach(movie => {
 
     clonedElement = movieTemplate.cloneNode(true);
     clonedElement.classList.add("movie-container", "container-shadow");
@@ -232,4 +237,14 @@ document.querySelector(".messageb a").addEventListener("click", function () {
 })
 
 
+//range slider
 
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function(){
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue;
+}
+
+elem.addEventListener("input", rangeValue);

@@ -51,9 +51,43 @@ class Movies {
              return response.json();
            });
          };
-
-   
+  
+  getAllMovies(){
+          return fetch(this.baseUrl + "/movies" + "?take=200")
+          .then(response => {
+            console.log("response", response);
+            if (response.ok){
+              return response.json();
+            }
+            return new Error("A network error occurred", response.status);
+          });
         }
+     
+  getMoviesWithFilters(filtersObj) {
+          //make the obj to string
+     
+          let filtersInUrl = "";
+          let urlToCall = this.baseUrl + "/movies";
+          let filtersArr = [];
+          if (filtersObj) {
+            for (let key in filtersObj) {
+                if (filtersObj.hasOwnProperty(key)) {
+                    filtersArr.push(key + '=' + filtersObj[key]);
+                }
+             };
+             filtersInUrl +=  "?" + filtersArr.join('&');
+             urlToCall += filtersInUrl;
+          }
+          return fetch(urlToCall)
+          .then(response => {
+            console.log("response", response);
+            if (response.ok){
+              return response.json();
+            }
+            return new Error("A network error occurred", response.status);
+          });
+        }
+  }
        
 
 var movies = new Movies();
