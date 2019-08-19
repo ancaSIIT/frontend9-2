@@ -2,25 +2,20 @@
 
 function verifyLoginComun() { 
  let loginToken = localStorage.getItem("accessToken");
- let userElement = document.querySelector(".username");
- let usernameElement = document.querySelector("username span")
-  usernameElement.innerHTML = localStorage.getItem("user");
  let logoutBtn = document.querySelector(".logout-button");
  let loginBtn = document.querySelector(".login-button");
  let registerBtn = document.querySelector(".register-button");
- let deleteBtn = document.querySelector(".delete-button");
+ //let deleteBtn = document.querySelector(".delete-button");
  if(loginToken) {
     logoutBtn.style.display = "inline-block";
     loginBtn.style.display = "none";
     registerBtn.style.display = "none";
-   deleteBtn.style.display = "inline-block";
-   userElement.style.sidplay = "inline-block";
+   // deleteBtn.style.display = "inline-blockk";
  } else {
     logoutBtn.style.display = "none";
     loginBtn.style.display = "inline-block";
     registerBtn.style.display = "inline-block";
-    deleteBtn.style.display = "none";
-    userElement = "none";
+    //deleteBtn.style.display = "none";
  }
 }
 

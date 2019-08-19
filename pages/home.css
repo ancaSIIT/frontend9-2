@@ -66,7 +66,6 @@ button {
 
 .new-movie-button {
   margin-left: 10px;
-  display: none;
 }
 
 .regenerate-button {
@@ -329,10 +328,6 @@ footer {
   color: red;
   text-decoration: none;
 }
-.loginValidateMessage {
-  color: red;
-  display: none;
-}
 
 .loginValidateMessage {
   color: red;
@@ -413,11 +408,4 @@ footer {
 
 .pagination button:hover {
   background-color: rgba(20, 29, 40, 0.5);
-}
-.logout-button {
-  display: none;
-};
-
-.header-right i  {
-  font-size: 10px;
 }
