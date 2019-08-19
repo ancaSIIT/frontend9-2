@@ -88,7 +88,7 @@ document.querySelector("#btnLogin").addEventListener("click", function (e) {
       localStorage.setItem("accessToken", data.accessToken);
       localStorage.setItem("user", username);
       document.querySelector(".login-modal").style.display = "none";
-    //  verifyLoginHome();
+    //  verifyLogin();
       document.getElementById("username").value = "";
       document.getElementById("password").value = "";
       messageElement.style.display = "none";

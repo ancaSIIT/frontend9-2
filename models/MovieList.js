@@ -38,7 +38,7 @@ class Movies {
       Poster: this.Poster,
       imdbRating: this.imdbRating
     };
-             console.log(this);
+  
 
         return fetch(baseUrl + "/movies", {
              method: "POST",
