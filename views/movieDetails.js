@@ -1,3 +1,7 @@
+// verify login function in MovieDetailsPage
+   verifyLoginDetails();
+
+//replace the hardcoded id with movieId
 var movieId = getQueryValue("id");
 
 const movie = new Movie({ id: movieId });
@@ -49,13 +53,15 @@ const displayMovieHtml = data => {
   imdbRating.innerHTML = data.imdbRating;
 };
 
+// Logout Button
 const logoutDetailsBtn = document.querySelector(".logout-button");
 logoutDetailsBtn.addEventListener("click", logoutDetails);
 
 function logoutDetails() {
   const logoutSession = new Auth();
-  logoutSession.logout().then(data => {
-    localStorage.removeItem("token");
-    verifyLoginDetails();
-  });
+   logoutSession.logout().then(data => {
+     localStorage.removeItem("accessToken");
+     localStorage.removeItem("user");
+     verifyLoginDetails();
+   })
 }
