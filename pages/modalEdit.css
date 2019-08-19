@@ -20,7 +20,7 @@ body {
 }
 
 .modal-wrapper {
-  margin: 200px 300px;
+  margin: 100px auto;
   border-radius: 5px;
   border: solid 1px #888888;
 }
