@@ -329,6 +329,12 @@ footer {
   text-decoration: none;
 }
 
+.loginValidateMessage {
+  color: red;
+  display: none;
+  font-weight: bold;
+}
+
 .reg-modal {
   width: 100%;
   height: 100%;
