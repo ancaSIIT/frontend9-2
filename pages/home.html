@@ -18,14 +18,9 @@
       <div class="header-left">
         <a href=""><i class="fas fa-dragon  fa-3x"></i></a>
         <input class="search-value" type="search" name="search" placeholder="Search" />
-        <button class="search-button button shadow">Search</button>
+        <button class="search-button">Search</button>
       </div>
       <div class="header-right">
-        <div class = "username">
-          <i class="far fa-user"></i>
-        <span class= "usernamePlace"></span>
-        </div>
-        <button class="logout-button">Logout</button>
         <button class="login-button">Login</button>
         <button class="register-button">Register</button>
         <button class="new-movie-button">Add New Movie</button>
@@ -37,35 +32,38 @@
     <aside class="container-shadow">
       <p>ADD FILTERS</p>
       <div class="navigation-menu">
-          <div><h4>Genre</h4>
-            <form>
-              <input type="radio" name="genre" value="All" checked> All<br>
-              <input type="radio" name="genre" value="action"> Action<br>
-              <input type="radio" name="genre" value="adventure"> Adventure<br>
-              <input type="radio" name="genre" value="animation"> Animation<br>
-              <input type="radio" name="genre" value="comedy"> Comedy<br>
-              <input type="radio" name="genre" value="documentary"> Documentary<br>
-              <input type="radio" name="genre" value="horror"> Horror<br>
-              <input type="radio" name="genre" value="mystery"> Mystery<br>
-              <input type="radio" name="genre" value="fan-sci"> Fantasy and Sci-Fi<br>
-              <input type="radio" name="genre" value="short"> Short<br>
-              <input type="radio" name="genre" value="thriller"> Thriller
-            </form>
-          </div>
-          <div><h4>Language</h4>
-            <form>
-              <input type="radio" name="language" value="All" checked> All<br>
-              <input type="radio" name="language" value="English"> English<br>
-              <input type="radio" name="language" value="Romanian"> Romanian<br>
-              <input type="radio" name="language" value="French"> French<br>
-              <input type="radio" name="language" value="German"> German<br>
-              <input type="radio" name="language" value="Spanish"> Spanish<br>
-              <input type="radio" name="language" value="Japanese"> Japanese<br>
-              <input type="radio" name="language" value="Mandarin"> Mandarin
-            </form>
-          </div>
-          <div><h4>Year</h4>
-            <div id="scrollDownYears">
+        <div>
+          <h4>Genre</h4>
+          <form>
+            <input type="radio" name="genre" value="All" checked> All<br>
+            <input type="radio" name="genre" value="action"> Action<br>
+            <input type="radio" name="genre" value="adventure"> Adventure<br>
+            <input type="radio" name="genre" value="animation"> Animation<br>
+            <input type="radio" name="genre" value="comedy"> Comedy<br>
+            <input type="radio" name="genre" value="documentary"> Documentary<br>
+            <input type="radio" name="genre" value="horror"> Horror<br>
+            <input type="radio" name="genre" value="mystery"> Mystery<br>
+            <input type="radio" name="genre" value="fan-sci"> Fantasy and Sci-Fi<br>
+            <input type="radio" name="genre" value="short"> Short<br>
+            <input type="radio" name="genre" value="thriller"> Thriller
+          </form>
+        </div>
+        <div>
+          <h4>Language</h4>
+          <form>
+            <input type="radio" name="language" value="All" checked> All<br>
+            <input type="radio" name="language" value="English"> English<br>
+            <input type="radio" name="language" value="Romanian"> Romanian<br>
+            <input type="radio" name="language" value="French"> French<br>
+            <input type="radio" name="language" value="German"> German<br>
+            <input type="radio" name="language" value="Spanish"> Spanish<br>
+            <input type="radio" name="language" value="Japanese"> Japanese<br>
+            <input type="radio" name="language" value="Mandarin"> Mandarin
+          </form>
+        </div>
+        <div>
+          <h4>Year</h4>
+          <div id="scrollDownYears">
             <form>
               <input type="radio" name="year" value="All" checked> All<br>
               <input type="radio" name="year" value="1970"> 1970<br>
@@ -120,32 +118,34 @@
               <input type="radio" name="year" value="2019"> 2019<br>
               <input type="radio" name="year" value="2020"> 2020
             </form>
-            </div>
           </div>
-          <div><h4>Country</h4>
-            <form>
-              <input type="radio" name="country" value="All" checked> All<br>
-              <input type="radio" name="country" value="uk"> UK<br>
-              <input type="radio" name="country" value="USA"> USA<br>
-              <input type="radio" name="country" value="romania"> Romania<br>
-              <input type="radio" name="country" value="denmark"> Denmark<br>
-              <input type="radio" name="country" value="philippines"> Philippines<br>
-              <input type="radio" name="country" value="japan"> Japan
-            </form>
-          </div>
-          <div><h4>Rating</h4>
+        </div>
+        <div>
+          <h4>Country</h4>
+          <form>
+            <input type="radio" name="country" value="All" checked> All<br>
+            <input type="radio" name="country" value="uk"> UK<br>
+            <input type="radio" name="country" value="USA"> USA<br>
+            <input type="radio" name="country" value="romania"> Romania<br>
+            <input type="radio" name="country" value="denmark"> Denmark<br>
+            <input type="radio" name="country" value="philippines"> Philippines<br>
+            <input type="radio" name="country" value="japan"> Japan
+          </form>
+        </div>
+        <div>
+          <h4>Rating</h4>
 
-            <!-- <form name="registrationForm">
+          <!-- <form name="registrationForm">
                 <input type="range" name="ageInputName" id="ageInputId" value="0.10" min="0" max="10" step="0.1" oninput="ageOutputId.value = ageInputId.value">
                 <output name="ageOutputName" id="ageOutputId">10</output>
             </form> -->
-            <div class="value">0</div>
-              <input type="range" min="0" max="10" step="0.1" value="0">
-            </br>
-            </br>
-          </div>
+          <div class="value">0</div>
+          <input type="range" min="0" max="10" step="0.1" value="0">
+          </br>
+          </br>
+        </div>
 
-          <!--
+        <!--
           <label class="container-checkbox">Action & Adventure
             <input type="checkbox">
             <span class="checkmark"></span>
@@ -188,62 +188,7 @@
             <span class="checkmark"></span>
           </label>
           <img src="../assets/pictures/filter-movie.png" alt=""> -->
-      
-      <!-- <ul>
-          <li>
-            <img class="navigation-menu-image" src="images/animation.jpg" />
-            <a href="">Animation</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/action.jpg" />
-            <a href="">Action</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/adventure.jpg" />
-            <a href="">Adventure</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/crime.jpg" />
-            <a href="">Crime</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/comedy.jpg" />
-            <a href="">Comedy</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/drama.jpg" />
-            <a href="">Drama</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/fantasy.jpg" />
-            <a href="">Fantasy</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/family.jpg" />
-            <a href="">Family</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/horror.jpg" />
-            <a href="">Horror</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/mistery.jpg" />
-            <a href="">Mystery</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/sci-fi.jpg" />
-            <a href="">Sci-fi</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/short.jpg" />
-            <a href="">Short</a>
-          </li>
-          <li>
-            <img class="navigation-menu-image" src="images/thriller.jpg" />
-            <a href="">Thriller</a>
-          </li>
-        </ul> -->
-        </div>
+      </div>
     </aside>
     <section>
       <div id="movie-article"></div>
@@ -255,29 +200,31 @@
       <div class="login-close">+</div>
       <i class="fas fa-dragon  fa-3x"></i>
 
-      <form >
-        <label class="loginValidateMessage"></label><br>
+      <form class="loginForm" method="post">
+        <label class="loginValidateMessage"></label>
         <input class="login-input" type="text" placeholder="Userame" id="username">
         <input class="login-input" type="password" placeholder="Password" id="password">
-        <button class="login-button-modal button shadow" id="btnLogin">Login</button>
-        <p class="message">Not registered? <a href="#">Click here.</a></p>
+        <button class="login-button-modal" id="btnLogin">Login</button>
+        <p class="message">Don't have an account? <a href="#">Click here.</a></p>
       </form>
     </div>
   </div>
 
+  <div class="pagination">
+  </div>
   <footer>
-    <div class="footer-logo shadow">
+    <div class="footer-logo">
       <i class="fas fa-dragon  fa-3x"></i>
       <span>Dragons Team</span>
     </div>
     <div class="footer-details wrapper">
-      <button class="regenerate-button button shadow"><i class="fas fa-sync"></i></button>
+      <button class="regenerate-button"><i class="fas fa-sync"></i></button>
       <div class="footer-contact">
         <p>Contact us:</p>
-        <a href=""><i class="fab fa-facebook-f shadow"></i></a>
-        <a href=""><i class="fab fa-twitter shadow"></i></a>
-        <a href=""><i class="fab fa-instagram shadow"></i></a>
-        <a href=""><i class="fab fa-youtube-square shadow"></i></a>
+        <button><i class="fab fa-facebook-f"></i></button>
+        <button><i class="fab fa-twitter"></i></button>
+        <button><i class="fab fa-instagram"></i></button>
+        <button><i class="fab fa-youtube-square"></i></button>
       </div>
     </div>
     <div class="footer-copyright">
@@ -287,34 +234,34 @@
   <div id="addModal">
     <div class="addModal-content">
       <div class="addModal-header">
-        <div class = "addModal-topHeader">
+        <div class="addModal-topHeader">
           <i class="fas fa-dragon  fa-3x"></i>
           <h4>New Movie Details</h4>
-        <span id= "closeAddModalBtn">&times;</span>
+          <button id="closeAddModalBtn">+</button>
         </div>
       </div>
       <div class="form-content">
-      <form >
-        Title:<br>
-        <input type="text" class = "input title"><br>
-        Year:<br>
-        <input type="text" class = "input year">
-        <span class = "tooltiptext">Input a valid year between 1880 and 2021</span><br>
-        Runtime:<br>
-        <input type="text" class="input runtime"><br>
-        Genre:<br>
-        <input type="text" class="input genre"><br>
-        Language:<br>
-        <input type="text" class="input language">
-      </form>
-      <form>
-        Plot:<br>
-        <textarea class ="input plot" ></textarea><br>
-        PosterUrl:<br>
-        <input type="text" class="input poster"><br>
-        IMDB Rating:<br>
-        <input type="text" class="input imdbRating">
-       </form>
+        <form>
+          Title:<br>
+          <input type="text" class="input title"><br>
+          Year:<br>
+          <input type="text" class="input year">
+          <span class="tooltiptext">Input a valid year between 1880 and 2021</span><br>
+          Runtime:<br>
+          <input type="text" class="input runtime"><br>
+          Genre:<br>
+          <input type="text" class="input genre"><br>
+          Language:<br>
+          <input type="text" class="input language">
+        </form>
+        <form>
+          Plot:<br>
+          <textarea class="input plot"></textarea><br>
+          PosterUrl:<br>
+          <input type="text" class="input poster"><br>
+          IMDB Rating:<br>
+          <input type="text" class="input imdbRating">
+        </form>
       </div>
       <div class="addButtons">
         <button id="saveAddBtn">Save</button>
@@ -329,13 +276,13 @@
       <div class="reg-close">+</div>
       <i class="fas fa-dragon  fa-3x"></i>
 
-      <form >
+      <form>
 
-        <input class="register-input" type="text" placeholder="Userame" >
-        <input class="register-input" type="password" placeholder="Password" >
-        <button class="register-button-modal button shadow" id="btnRegister">Register</button>
+        <input class="register-input" type="text" placeholder="Userame">
+        <input class="register-input" type="password" placeholder="Password">
+        <button class="register-button-modal" id="btnRegister">Register</button>
       </form>
-      <p class="messageb">Already Registered? <a href="#"  >Login.</a></p>
+      <p class="messageb">Already Registered? <a href="#">Login.</a></p>
 
     </div>
   </div>
@@ -348,6 +295,10 @@
   <script type="text/javascript" src="../views/filter.js"></script>>
   <div id="movie-template">
     <a href="" class="movie-title"></a>
+    <div class="movie-template-buttons">
+      <button>Delete</button>
+      <button>Edit</button>
+    </div>
   </div>
 </body>
 

@@ -22,7 +22,7 @@ let inputRuntime = document.querySelector(".runtime-input");
 let inputPoster = document.querySelector(".poster-input");
 let inputGenre = document.querySelector(".genre-input");
 let inputImdbRating = document.querySelector(".rating-input");
-
+//Open Edit Form
 editButton.onclick = () => {
   inputTitle.setAttribute("value", title.innerHTML);
   inputPlot.setAttribute("value", plot.innerHTML);
@@ -35,29 +35,36 @@ editButton.onclick = () => {
 
   editModal.style.display = "block";
 };
-
+//Close Edit Form
 closeButton.onclick = () => {
   editModal.style.display = "none";
 };
-
+//Close Edit Form from X
 editClose.onclick = () => {
   editModal.style.display = "none";
 };
 
 var editData = new Movie({});
-
+//Save Edit Form
 saveButton.onclick = data => {
-  editData.Title = data.path[2].children[1].children[1].value;
-  editData.Year = data.path[2].children[1].children[3].value;
-  editData.Genre = data.path[2].children[1].children[5].value;
-  editData.Runtime = data.path[2].children[1].children[7].value;
-  editData.Plot = data.path[2].children[1].children[9].value;
-  editData.Language = data.path[2].children[1].children[11].value;
-  editData.Poster = data.path[2].children[1].children[13].value;
-  editData.imdbRating = data.path[2].children[1].children[15].value;
+  editData.Title = inputTitle.value;
+  editData.Year = inputYear.value;
+  editData.Genre = inputGenre.value;
+  editData.Runtime = inputRuntime.value;
+  editData.Plot = inputPlot.value;
+  editData.Language = inputLanguage.value;
+  editData.Poster = inputPoster.value;
+  editData.imdbRating = inputImdbRating.value;
   editData.id = movieId;
 
   editData.update(editData).then(() => {
+    title.innerHTML = editData.Title;
+    year.innerHTML = editData.Year;
+    genre.innerHTML = editData.Genre;
+    runtime.innerHTML = editData.Runtime;
+    plot.innerHTML = editData.Plot;
+    language.innerHTML = editData.Language;
+    imdbRating.innerHTML = editData.imdbRating;
     editModal.style.display = "none";
   });
 };
