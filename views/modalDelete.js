@@ -28,5 +28,4 @@ function deleteMovie() {
     console.log("deleted", data);
     location.assign("home.html");
   });
-
 }

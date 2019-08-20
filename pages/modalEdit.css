@@ -1,0 +1,106 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.modal-shadow {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+}
+
+.modal-wrapper {
+  margin: 100px auto;
+  border-radius: 5px;
+  border: solid 1px #888888;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(20, 29, 40);
+}
+.logo-edit {
+  color: red;
+  margin: 18px;
+}
+.edit-close {
+  color: white;
+  margin: 10px;
+  padding: 0;
+  cursor: pointer;
+}
+form {
+  justify-content: space-evenly;
+}
+
+label {
+  margin: 10px;
+}
+
+input[type="text"] {
+  margin: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  background: black;
+}
+
+button.save-button {
+  margin: 10px 5px;
+}
+
+button.close-button {
+  margin: 10px 10px 10px 5px;
+}
+
+@media screen and (max-width: 425px) {
+  form {
+    background: black;
+    display: grid;
+    grid-template-columns: 90%;
+  }
+  .modal-wrapper {
+    width: 320px;
+  }
+  label {
+    margin: 5px;
+  }
+  input[type="text"] {
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  form {
+    background: black;
+    display: grid;
+    grid-template-columns: 15% 70%;
+  }
+  .modal-wrapper {
+    width: 425px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    background: black;
+    display: grid;
+    grid-template-columns: 10% 40% 10% 40%;
+  }
+  .modal-wrapper {
+    width: 768px;
+  }
+}
