@@ -40,16 +40,24 @@ body {
   padding: 0;
   cursor: pointer;
 }
-form {
+form.inputs-form {
   justify-content: space-evenly;
 }
 
-label {
+form label {
   margin: 10px;
 }
 
-input[type="text"] {
+form input[type="text"] {
   margin: 10px;
+}
+
+form input[type="number"] {
+  margin: 10px;
+}
+
+form input:invalid {
+  border: 3px solid red;
 }
 
 .buttons {
@@ -67,7 +75,7 @@ button.close-button {
 }
 
 @media screen and (max-width: 425px) {
-  form {
+  form.inputs-form {
     background: black;
     display: grid;
     grid-template-columns: 90%;
@@ -75,16 +83,16 @@ button.close-button {
   .modal-wrapper {
     width: 320px;
   }
-  label {
+  form label {
     margin: 5px;
   }
-  input[type="text"] {
+  form input[type="text"] {
     margin: 5px;
   }
 }
 
 @media screen and (min-width: 425px) {
-  form {
+  form.inputs-form {
     background: black;
     display: grid;
     grid-template-columns: 15% 70%;
@@ -95,7 +103,18 @@ button.close-button {
 }
 
 @media screen and (min-width: 768px) {
-  form {
+  form.inputs-form {
+    background: black;
+    display: grid;
+    grid-template-columns: 10% 40% 10% 40%;
+  }
+  .modal-wrapper {
+    width: 768px;
+  }
+}
+
+@media print and (min-width: 320px) {
+  form.inputs-form {
     background: black;
     display: grid;
     grid-template-columns: 10% 40% 10% 40%;

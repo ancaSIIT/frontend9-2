@@ -4,6 +4,7 @@ let editModal = document.querySelector(".modal-shadow");
 let editClose = document.querySelector(".edit-close");
 let saveButton = document.querySelector(".save-button");
 let closeButton = document.querySelector(".close-button");
+
 //Details classes
 let title = document.querySelector(".title");
 let plot = document.querySelector(".plot");
@@ -35,6 +36,7 @@ editButton.onclick = () => {
 
   editModal.style.display = "block";
 };
+
 //Close Edit Form
 closeButton.onclick = () => {
   editModal.style.display = "none";
@@ -46,7 +48,7 @@ editClose.onclick = () => {
 
 var editData = new Movie({});
 //Save Edit Form
-saveButton.onclick = data => {
+saveButton.onclick = () => {
   editData.Title = inputTitle.value;
   editData.Year = inputYear.value;
   editData.Genre = inputGenre.value;
@@ -56,15 +58,27 @@ saveButton.onclick = data => {
   editData.Poster = inputPoster.value;
   editData.imdbRating = inputImdbRating.value;
   editData.id = movieId;
-
-  editData.update(editData).then(() => {
-    title.innerHTML = editData.Title;
-    year.innerHTML = editData.Year;
-    genre.innerHTML = editData.Genre;
-    runtime.innerHTML = editData.Runtime;
-    plot.innerHTML = editData.Plot;
-    language.innerHTML = editData.Language;
-    imdbRating.innerHTML = editData.imdbRating;
-    editModal.style.display = "none";
-  });
+  if (
+    inputTitle.value &&
+    inputYear.value &&
+    inputGenre.value &&
+    inputRuntime.value &&
+    inputPlot.value &&
+    inputLanguage.value &&
+    inputPoster.value &&
+    inputImdbRating.value
+  ) {
+    editData.update(editData).then(() => {
+      title.innerHTML = editData.Title;
+      year.innerHTML = editData.Year;
+      genre.innerHTML = editData.Genre;
+      runtime.innerHTML = editData.Runtime;
+      plot.innerHTML = editData.Plot;
+      language.innerHTML = editData.Language;
+      imdbRating.innerHTML = editData.imdbRating;
+      editModal.style.display = "none";
+    });
+  } else {
+    console.log("Err: Edit Input/s Have Empty Field/s");
+  }
 };
