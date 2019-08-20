@@ -1,13 +1,11 @@
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
+let btn = document.querySelector(".delete-button");
+let span = document.getElementsByClassName("close")[0];
 
-var btn = document.querySelector(".delete-button");
-
-var span = document.getElementsByClassName("close")[0];
-
-var buttonYes = document.querySelector(".button-yes");
+let buttonYes = document.querySelector(".button-yes");
 buttonYes.addEventListener("click", deleteMovie);
 
-var buttonNo = document.getElementsByClassName("button-no")[0];
+let buttonNo = document.getElementsByClassName("button-no")[0];
 
 btn.onclick = () => {
   modal.style.display = "block";
@@ -28,7 +26,7 @@ buttonNo.onclick = () => {
 function deleteMovie() {
   deleteMovieFromApi(movieId).then(data => {
     console.log("deleted", data);
-    history.back();
+    location.assign("home.html");
   });
 
 }
