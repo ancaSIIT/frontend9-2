@@ -1,9 +1,10 @@
+//Buttons classes
 let editButton = document.querySelector(".edit-button");
 let editModal = document.querySelector(".modal-shadow");
 let editClose = document.querySelector(".edit-close");
 let saveButton = document.querySelector(".save-button");
 let closeButton = document.querySelector(".close-button");
-
+//Details classes
 let title = document.querySelector(".title");
 let plot = document.querySelector(".plot");
 let year = document.querySelector(".year");
@@ -12,16 +13,16 @@ let runtime = document.querySelector(".runtime");
 let poster = document.querySelector(".posterUrl");
 let genre = document.querySelector(".genre");
 let imdbRating = document.querySelector(".imdbRating");
-
-let inputTitle = document.getElementsByTagName("input")[1];
-let inputPlot = document.getElementsByTagName("input")[2];
-let inputYear = document.getElementsByTagName("input")[3];
-let inputLanguage = document.getElementsByTagName("input")[4];
-let inputRuntime = document.getElementsByTagName("input")[5];
-let inputPoster = document.getElementsByTagName("input")[6];
-let inputGenre = document.getElementsByTagName("input")[7];
-let inputImdbRating = document.getElementsByTagName("input")[8];
-
+//Input classes
+let inputTitle = document.querySelector(".title-input");
+let inputPlot = document.querySelector(".plot-input");
+let inputYear = document.querySelector(".year-input");
+let inputLanguage = document.querySelector(".language-input");
+let inputRuntime = document.querySelector(".runtime-input");
+let inputPoster = document.querySelector(".poster-input");
+let inputGenre = document.querySelector(".genre-input");
+let inputImdbRating = document.querySelector(".rating-input");
+//Open Edit Form
 editButton.onclick = () => {
   inputTitle.setAttribute("value", title.innerHTML);
   inputPlot.setAttribute("value", plot.innerHTML);
@@ -34,30 +35,36 @@ editButton.onclick = () => {
 
   editModal.style.display = "block";
 };
-
+//Close Edit Form
 closeButton.onclick = () => {
   editModal.style.display = "none";
 };
-
+//Close Edit Form from X
 editClose.onclick = () => {
   editModal.style.display = "none";
 };
 
 var editData = new Movie({});
-
+//Save Edit Form
 saveButton.onclick = data => {
-  editData.Title = data.path[2].children[1].children[1].value;
-  editData.Year = data.path[2].children[1].children[3].value;
-  editData.Genre = data.path[2].children[1].children[5].value;
-  editData.Runtime = data.path[2].children[1].children[7].value;
-  editData.Plot = data.path[2].children[1].children[9].value;
-  editData.Language = data.path[2].children[1].children[11].value;
-  editData.Poster = data.path[2].children[1].children[13].value;
-  editData.imdbRating = data.path[2].children[1].children[15].value;
+  editData.Title = inputTitle.value;
+  editData.Year = inputYear.value;
+  editData.Genre = inputGenre.value;
+  editData.Runtime = inputRuntime.value;
+  editData.Plot = inputPlot.value;
+  editData.Language = inputLanguage.value;
+  editData.Poster = inputPoster.value;
+  editData.imdbRating = inputImdbRating.value;
   editData.id = movieId;
 
-  editData.update(editData).then(data => {
+  editData.update(editData).then(() => {
+    title.innerHTML = editData.Title;
+    year.innerHTML = editData.Year;
+    genre.innerHTML = editData.Genre;
+    runtime.innerHTML = editData.Runtime;
+    plot.innerHTML = editData.Plot;
+    language.innerHTML = editData.Language;
+    imdbRating.innerHTML = editData.imdbRating;
     editModal.style.display = "none";
-    location.reload(true);
   });
 };
