@@ -303,6 +303,7 @@ footer {
   justify-content: center;
   align-items: center;
   display: none;
+  z-index: 7;
 }
 
 .content-modal {
@@ -385,7 +386,7 @@ footer {
   .reg-content {
     width: 70%;
   }
-  
+
 }
 
 @media (min-width: 768px) {
