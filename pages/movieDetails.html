@@ -122,17 +122,33 @@
           </div>
         </div>
       </div>
-    
+
     <div class="wrapper-border"></div>
 
-  
+    <!-- Login Modal -->
+       <div class="login-modal">
+         <div class="content-modal">
+
+           <div class="login-close">+</div>
+           <i class="fas fa-dragon  fa-3x"></i>
+
+           <form class="loginForm" method="post">
+             <label class="loginValidateMessage"></label>
+             <input class="login-input" type="text" placeholder="Userame" id="username">
+             <input class="login-input" type="password" placeholder="Password" id="password">
+             <button class="login-button-modal" id="btnLogin">Login</button>
+             <p class="message">Don't have an account? <a href="#">Click here.</a></p>
+           </form>
+         </div>
+       </div>
+
      <!-- Register Modal -->
 
       <div class="reg-modal">
           <div class="reg-content">
             <div class="reg-close">+</div>
             <i class="fas fa-dragon  fa-3x"></i>
-      
+
             <form>
                <label class="registerValidateMessage"></label><br>
               <input class="register-input" type="text" placeholder="Userame" id= "regUsername"><br>
@@ -140,10 +156,10 @@
               <button class="register-button-modal" id="btnRegister">Register</button>
             </form>
             <p class="messageb">Already Registered? <a href="#">Login.</a></p>
-      
+
           </div>
         </div>
-  
+
       <!-- Details Footer -->
 
     <footer>
@@ -175,6 +191,6 @@
     <script src="../views/movieDetails.js"></script>
     <script src="../views/modalEdit.js"></script>
     <script src="../views/modalDelete.js"></script>
-    
+
   </body>
 </html>
