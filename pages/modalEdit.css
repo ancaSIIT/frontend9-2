@@ -48,11 +48,7 @@ form label {
   margin: 10px;
 }
 
-form input[type="text"] {
-  margin: 10px;
-}
-
-form input[type="number"] {
+form.inputs-form input[type="text"] {
   margin: 10px;
 }
 
