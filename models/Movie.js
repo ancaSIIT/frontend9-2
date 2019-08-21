@@ -20,7 +20,7 @@ Movie.prototype.update = function (data) {
     body: JSON.stringify(data),
     headers: {
       "Content-type": "application/json",
-      "x-Auth-Token": ""
+      "x-Auth-Token": "FsfNX_3y2sYi-7kDThIBK7YcxkoUbGfA" //localStorage.getItem("accessToken")
     }
   }).then(function (response) {
     return response.json();

@@ -11,6 +11,7 @@ function getAndDisplayMovies() {
     });
 }
 
+
 function showPage(pageNumber) {
   let skip = (pageNumber * 10) - 10;
   let pag = document.querySelector(".pagination")
@@ -76,11 +77,13 @@ function createMovies(movieList) {
     clonedElement.style.backgroundImage = `url(${movie.Poster})`;
     movieArticle.insertBefore(clonedElement, movieArticle.childNodes[0]);
   });
+
+  verifyLoginHome();
 }
 
 const addBtn = document.querySelector(".new-movie-button");
 addBtn.addEventListener("click", addMovie);
-//addBtn.style.display = "none";
+
 
 function addMovie() {
   const modalElement = document.getElementById("addModal");
@@ -162,23 +165,27 @@ function addMovie() {
         for (let i = 0; i < inputValues.length; i++) {
           inputValues[i].value = "";
         }
-        movies.getMovies().then(data => {
-          createMovies(data);
-        });
+        movies.getMovies(0)
+          .then(function (movieList) {
+            createPagination(movieList);
+            createMovies(movieList.results);
+          });
       });
 
     }
   });
 }
 
-//Nu merge deoarece nu exista button de Logout pe home page, acesta trebuie creat dupa ce se face login si il inlocuieste
-// const logoutHomeBtn = document.querySelector(".logout-button");
-// logoutHomeBtn.addEventListener("click", logoutHome);
+//logout button
+
+const logoutHomeBtn = document.querySelector(".logout-button");
+logoutHomeBtn.addEventListener("click", logoutHome);
 
 function logoutHome() {
   const logoutSession = new Auth();
   logoutSession.logout().then(data => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("user");
     verifyLoginHome();
   })
 }
@@ -233,7 +240,7 @@ document.querySelector("#btnLogin").addEventListener("click", function (e) {
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("user", username);
         document.querySelector(".login-modal").style.display = "none";
-        //  verifyLoginHome();
+        verifyLoginHome();
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
         messageElement.style.display = "none";
@@ -255,25 +262,76 @@ document.querySelector(".message a").addEventListener("click", function () {
   document.querySelector(".login-modal").style.display = "none";
 })
 
-// function validateLogin() {
-//   let username = document.getElementById("username").value;
-//   let password = document.getElementById("password").value;
-//   if (username == null || username == "") {
-//     alert("Please enter the username.");
-//     return false;
-//   }
-//   if (password == null || password == "") {
-//     alert("Please enter the password.");
-//     return false;
-//   }
-//   document.querySelector(".login-modal").style.display = "none";
-//   document.querySelector(".user").innerHTML = username;
-// }
+
 
 //Register Button
+
 document.querySelector(".register-button").addEventListener("click", function () {
   document.querySelector(".reg-modal").style.display = "flex";
 });
+
+const registerBtn = document.getElementById("btnRegister");
+registerBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  let username = document.getElementById("regUsername").value;
+  let usernameElement = document.getElementById("regUsername");
+  let password = document.getElementById("regPassword").value;
+  let passwordElement = document.getElementById("regPassword");
+  let messageElement = document.querySelector(".registerValidateMessage");
+  console.log(username, password);
+
+  if (username == "") {
+    usernameElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Please fill all fields."
+    messageElement.style.display = "inline";
+  } else if (username.length < 8) {
+    usernameElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Username and password must have at least 8 caracthers."
+    messageElement.style.display = "inline";
+  } else {
+    usernameElement.style.border = "1px solid black";
+    messageElement.style.display = "none";
+  }
+  if (password == "") {
+    passwordElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Please fill all fields."
+    messageElement.style.display = "inline";
+  } else if (password.length < 8) {
+    usernameElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Username and password must have at least 8 caracthers."
+    messageElement.style.display = "inline";
+  } else if (username.length < 8) {
+    usernameElement.style.border = "2px solid red";
+    messageElement.innerHTML = "Username and password must have at least 8 caracthers."
+    messageElement.style.display = "inline";
+  } else {
+    passwordElement.style.border = "1px solid black";
+    messageElement.style.display = "none";
+  }
+
+
+  if (username && password && username.length >= 8 && password.length >= 8) {
+    let reg = new Auth();
+    reg.register(username, password).then(data => {
+      console.log(data);
+      if (data.authenticated) {
+        localStorage.setItem("accessToken", data.accessToken);
+        localStorage.setItem("user", username);
+        document.querySelector(".reg-modal").style.display = "none";
+        verifyLoginHome();
+        document.getElementById("regUsername").value = "";
+        document.getElementById("regPassword").value = "";
+        messageElement.style.display = "none";
+      } else {
+        messageElement.innerHTML = data.message;
+        messageElement.style.display = "inline";
+      }
+    })
+  }
+})
+
+
+
 document.querySelector(".reg-close").addEventListener("click", function () {
   document.querySelector(".reg-modal").style.display = "none";
 });

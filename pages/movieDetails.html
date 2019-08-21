@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="movieDetails.css">
-  <link rel="stylesheet" href="modalDelete.css" media="screen">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="movieDetails.css" />
+  <link rel="stylesheet" href="modalDelete.css" media="screen" />
   <link rel="stylesheet" href="modalEdit.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
   <title>Movie Details</title>
 </head>
 
@@ -22,6 +22,8 @@
         <button class="search-button button shadow">Search</button>
       </div>
       <div class="header-right">
+        <i class="far fa-user"></i>
+        <span class="username"></span>
         <button class="login-button button shadow">Login</button>
         <button class="register-button button shadow">Register</button>
         <button class="logout-button button shadow">Logout</button>
@@ -36,24 +38,28 @@
       <img class="posterUrl" alt="Poster" />
     </div>
     <section class="details">
-      <p>Year:
+      <p>
+        Year:
         <span class="year"> </span>
       </p>
-      <p>Language:
+      <p>
+        Language:
         <span class="language"></span>
       </p>
-      <p>Runtime:
+      <p>
+        Runtime:
         <span class="runtime"></span>
       </p>
-      <p>Genre:
+      <p>
+        Genre:
         <span class="genre"></span>
       </p>
-      <p>Imdb Rating:
+      <p>
+        Imdb Rating:
         <span class="imdbRating"></span>
       </p>
     </section>
-    <button class="edit-button" name="button">Edit</button>
-    <button class="delete-button" name="button">Delete</button>
+
 
     <!-- Edit Modal -->
     <div class="modal-shadow">
@@ -63,25 +69,24 @@
           <p>Edit this movie.</p>
           <span class="edit-close">&#935;</span>
         </div>
-        <form>
+        <form class="inputs-form">
           <label for="title">Title:</label>
-          <input type="text" name="title" />
+          <input class="title-input" type="text" name="title" required />
           <label for="plot">Plot:</label>
-          <input type="text" name="plot" />
+          <input class="plot-input" type="text" name="plot" required />
           <label for="year">Year:</label>
-          <input type="text" name="year" />
+          <input class="year-input" type="text" name="year" required />
           <label for="language">Language:</label>
-          <input type="text" name="language" />
+          <input class="language-input" type="text" name="language" required />
           <label for="runtime">Runtime:</label>
-          <input type="text" name="runtime" />
+          <input class="runtime-input" type="text" name="runtime" required />
           <label for="poster">PosterUrl:</label>
-          <input type="text" name="poster" />
+          <input class="poster-input" type="text" name="poster" required />
           <label for="genre">Genre:</label>
-          <input type="text" name="genre" />
+          <input class="genre-input" type="text" name="genre" required />
           <label for="rating">Rating:</label>
-          <input type="text" name="rating" />
+          <input class="rating-input" type="text" name="rating" required />
         </form>
-
         <div class="buttons">
           <button class="save-button">Save</button>
           <button class="close-button">Close</button>
@@ -103,37 +108,80 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="wrapper-border"></div>
 
-  <!-- Details Footer -->
+    <div class="wrapper-border">
+      <button class="edit-button" name="button">Edit</button>
+      <button class="delete-button" name="button">Delete</button>
+    </div>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo shadow">
+    <!-- Details Footer -->
+
+    <!-- Login Modal -->
+    <div class="login-modal">
+      <div class="content-modal">
+
+        <div class="login-close">+</div>
         <i class="fas fa-dragon  fa-3x"></i>
-        <span>Dragons Team</span>
+
+        <form class="loginForm" method="post">
+          <label class="loginValidateMessage"></label>
+          <input class="login-input" type="text" placeholder="Userame" id="username">
+          <input class="login-input" type="password" placeholder="Password" id="password">
+          <button class="login-button-modal" id="btnLogin">Login</button>
+          <p class="message">Don't have an account? <a href="#">Click here.</a></p>
+        </form>
       </div>
     </div>
-    <div class="footer-details wrapper">
-      <div class="footer-contact">
-        <p>Contact us:</p>
-        <a href=""><i class="fab fa-facebook-f shadow"></i></a>
-        <a href=""><i class="fab fa-twitter shadow"></i></a>
-        <a href=""><i class="fab fa-instagram shadow"></i></a>
-        <a href=""><i class="fab fa-youtube-square shadow"></i></a>
-        <div class="footer-copyright">
-          <p> <i class="far fa-copyright"></i>2019 dragons team. all rights reserved</p>
+
+    <!-- Register Modal -->
+
+    <div class="reg-modal">
+      <div class="reg-content">
+        <div class="reg-close">+</div>
+        <i class="fas fa-dragon  fa-3x"></i>
+
+        <form>
+          <label class="registerValidateMessage"></label><br>
+          <input class="register-input" type="text" placeholder="Userame" id="regUsername"><br>
+          <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
+          <button class="register-button-modal" id="btnRegister">Register</button>
+        </form>
+        <p class="messageb">Already Registered? <a href="#">Login.</a></p>
+
+      </div>
+    </div>
+
+    <!-- Details Footer -->
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo shadow">
+          <i class="fas fa-dragon  fa-3x"></i>
+          <span>Dragons Team</span>
         </div>
       </div>
-    </div>
-  </footer>
-  <script src="../models/Movie.js"></script>
-  <script src="../models/Auth.js"></script>
-  <script src="../views/movieDetails.js"></script>
-  <script src="../views/modalEdit.js"></script>
-  <script src="../views/modalDelete.js"></script>
-  <script src="../views/authState.js"></script>
+      <div class="footer-details wrapper">
+        <div class="footer-contact">
+          <p>Contact us:</p>
+          <a href=""><i class="fab fa-facebook-f shadow"></i></a>
+          <a href=""><i class="fab fa-twitter shadow"></i></a>
+          <a href=""><i class="fab fa-instagram shadow"></i></a>
+          <a href=""><i class="fab fa-youtube-square shadow"></i></a>
+          <div class="footer-copyright">
+            <p>
+              <i class="far fa-copyright"></i>2019 dragons team. all rights
+              reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../models/Movie.js"></script>
+    <script src="../models/Auth.js"></script>
+    <script src="../views/authState.js"></script>
+    <script src="../views/movieDetails.js"></script>
+    <script src="../views/modalEdit.js"></script>
+    <script src="../views/modalDelete.js"></script>
 
 </body>
 
