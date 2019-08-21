@@ -14,7 +14,7 @@ class Movie {
   }
 }
 
-Movie.prototype.update = function(data) {
+Movie.prototype.update = function (data) {
   return fetch(`${baseUrl}/movies/${data.id}`, {
     method: "PUT",
     body: JSON.stringify(data),
@@ -22,21 +22,22 @@ Movie.prototype.update = function(data) {
       "Content-type": "application/json",
       "x-Auth-Token": ""
     }
-  }).then(function(response) {
+  }).then(function (response) {
     return response.json();
   });
 };
 
-function deleteMovieFromApi(movieId) {
-  var url = baseUrl + "/movies/" + movieId;
+Movie.prototype.delete = function () {
+  var url = `${baseUrl}/movies/${this.id}`;
 
   return fetch(url, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       "x-Auth-Token": "9WnI_tKZbrC8fDB8FbL5gfFPcJsE8M9n"
+      // "x-Auth-Token": localStorage.getItem("accessToken")
     }
-  }).then(function(response) {
+  }).then(function (response) {
     return response.text();
   });
 }

@@ -1,5 +1,9 @@
-
+var movies = new Movies();
 window.onload = function () {
+  getAndDisplayMovies();
+}
+
+function getAndDisplayMovies() {
   movies.getMovies(0)
     .then(function (movieList) {
       createPagination(movieList);
@@ -41,9 +45,9 @@ function createPagination(movieList) {
 }
 
 function createMovies(movieList) {
-  if (!movieList.length){
+  if (!movieList.length) {
     let movieArticle = document.getElementById("movie-article");
-    movieArticle.innerHTML= "There are no results for this search. Please try a new search with a different keyword or filter.";
+    movieArticle.innerHTML = "There are no results for this search. Please try a new search with a different keyword or filter.";
     return;
   }
   let movieArticle = document.getElementById("movie-article");
@@ -60,6 +64,14 @@ function createMovies(movieList) {
     let titleElement = clonedElement.querySelector(".movie-title");
     titleElement.innerText = movie.Title;
     clonedElement.id = movie._id;
+
+    const movieModel = new Movie({ id: movie._id });
+    let deleteButton = clonedElement.querySelector('.delete-button-homepage');
+    deleteButton.addEventListener("click", function () {
+      movieModel.delete().then(() => {
+        getAndDisplayMovies();
+      });
+    });
 
     clonedElement.style.backgroundImage = `url(${movie.Poster})`;
     movieArticle.insertBefore(clonedElement, movieArticle.childNodes[0]);
@@ -215,21 +227,21 @@ document.querySelector("#btnLogin").addEventListener("click", function (e) {
   }
   if (username && password) {
     let auth = new Auth();
-  auth.login(username, password).then( data => {
-    console.log(data);
-    if (data.authenticated) {
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("user", username);
-      document.querySelector(".login-modal").style.display = "none";
-    //  verifyLoginHome();
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
-      messageElement.style.display = "none";
-    } else {
-      messageElement.innerHTML = data.message;
-      messageElement.style.display = "inline";
-    }
-  })
+    auth.login(username, password).then(data => {
+      console.log(data);
+      if (data.authenticated) {
+        localStorage.setItem("accessToken", data.accessToken);
+        localStorage.setItem("user", username);
+        document.querySelector(".login-modal").style.display = "none";
+        //  verifyLoginHome();
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        messageElement.style.display = "none";
+      } else {
+        messageElement.innerHTML = data.message;
+        messageElement.style.display = "inline";
+      }
+    })
   }
 })
 
@@ -276,7 +288,7 @@ document.querySelector(".messageb a").addEventListener("click", function () {
 
 var elem = document.querySelector('input[type="range"]');
 
-var rangeValue = function(){
+var rangeValue = function () {
   var newValue = elem.value;
   var target = document.querySelector('.value');
   target.innerHTML = newValue;
