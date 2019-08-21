@@ -463,3 +463,8 @@ footer {
 .username, .far.fa-user, .logout-button {
   display: none;
 }
+.registerValidateMessage {
+  color: red;
+  display: none;
+  font-weight: bold;
+}
