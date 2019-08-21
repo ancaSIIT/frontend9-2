@@ -302,7 +302,7 @@ flex-grow: 1;
 }
 
 .reg-content {
-  width: 500px;
+  width: 30%;
   /* height: 300px; */
   background-color: black;
   border-radius: 10px;
@@ -350,6 +350,31 @@ flex-grow: 1;
   color: red;
   display: none;
   font-weight: bold;
+}
+
+
+@media (min-width: 320px) {
+  .reg-content {
+    width: 70%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .reg-content {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reg-content {
+    width: 45%;
+  }
+}
+@media (min-width: 1300px) {
+  .reg-content {
+    width: 35%;
+  }
 }
 
 .username, .far.fa-user {

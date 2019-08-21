@@ -46,6 +46,7 @@ const displayMovieHtml = data => {
 
   let imdbRating = document.querySelector(".imdbRating");
   imdbRating.innerHTML=data.imdbRating;
+
 }
 
 //Login Button

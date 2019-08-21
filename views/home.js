@@ -7,7 +7,6 @@ window.onload = function () {
     });
 }
 
-verifyLoginHome();
 
 function showPage(pageNumber) {
   let skip = (pageNumber * 10) - 10;
@@ -66,6 +65,8 @@ function createMovies(movieList) {
     clonedElement.style.backgroundImage = `url(${movie.Poster})`;
     movieArticle.insertBefore(clonedElement, movieArticle.childNodes[0]);
   });
+
+  verifyLoginHome();
 }
 
 const addBtn = document.querySelector(".new-movie-button");
