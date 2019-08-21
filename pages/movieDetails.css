@@ -225,6 +225,7 @@ flex-grow: 1;
   height: 100%;
   background-color: rgba(192, 192, 192, 0.5);
   position: fixed;
+  left: 0;
   top: 0;
   display: flex;
   justify-content: center;
