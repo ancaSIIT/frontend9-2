@@ -1,10 +1,8 @@
 const baseUrlTemp = "https://movies-api-siit.herokuapp.com"; // make common base url
 
 class Auth {
-  constructor () {
-    this.username = username;
-    this.password = password;
-  };
+  constructor () {};
+  
 
   login(username, password) {
     console.log("IN MODEL");
@@ -31,5 +29,21 @@ class Auth {
        "x-Auth-Token": localStorage.getItem("accessToken")
       }
     }).then(response => response.json());
+  }
+
+  register(username, password) {
+    let data = {
+      username: username,
+      password: password
+    };
+
+    return fetch(baseUrlTemp + "/auth/register", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(response => response.json())
+    console.log(response);
   }
 }

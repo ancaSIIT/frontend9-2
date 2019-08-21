@@ -21,6 +21,9 @@
         <button class="search-button">Search</button>
       </div>
       <div class="header-right">
+        <i class="far fa-user"></i>
+        <span class= "username"></span>
+        <button class="logout-button">Logout</button>
         <button class="login-button">Login</button>
         <button class="register-button">Register</button>
         <button class="new-movie-button">Add New Movie</button>
@@ -277,22 +280,22 @@
       <i class="fas fa-dragon  fa-3x"></i>
 
       <form>
-
-        <input class="register-input" type="text" placeholder="Userame">
-        <input class="register-input" type="password" placeholder="Password">
+         <label class="registerValidateMessage"></label>
+        <input class="register-input" type="text" placeholder="Userame" id= "regUsername">
+        <input class="register-input" type="password" placeholder="Password" id="regPassword">
         <button class="register-button-modal" id="btnRegister">Register</button>
       </form>
       <p class="messageb">Already Registered? <a href="#">Login.</a></p>
 
     </div>
   </div>
-
   <script type="text/javascript" src="../models/MovieList.js"></script>
   <script type="text/javascript" src="../models/Auth.js"></script>
+  <script type="text/javascript" src="../views/authState.js"></script>
   <script type="text/javascript" src="../models/SearchFilter.js"></script>
   <script type="text/javascript" src="../views/home.js"></script>
-  <script type="text/javascript" src="../views/authState.js"></script>
-  <script type="text/javascript" src="../views/filter.js"></script>>
+  <script type="text/javascript" src="../views/filter.js"></script>
+  
   <div id="movie-template">
     <a href="" class="movie-title"></a>
     <div class="movie-template-buttons">
@@ -300,6 +303,7 @@
       <button>Edit</button>
     </div>
   </div>
+  
 </body>
 
 </html>

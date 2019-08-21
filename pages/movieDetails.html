@@ -30,6 +30,8 @@
           <button class="search-button button shadow">Search</button>
         </div>
         <div class="header-right">
+            <i class="far fa-user"></i>
+            <span class= "username"></span>
           <button class="login-button button shadow">Login</button>
           <button class="register-button button shadow">Register</button>
           <button class="logout-button button shadow">Logout</button>
@@ -120,10 +122,29 @@
           </div>
         </div>
       </div>
-    </div>
+    
     <div class="wrapper-border"></div>
 
-    <!-- Details Footer -->
+  
+     <!-- Register Modal -->
+
+      <div class="reg-modal">
+          <div class="reg-content">
+            <div class="reg-close">+</div>
+            <i class="fas fa-dragon  fa-3x"></i>
+      
+            <form>
+               <label class="registerValidateMessage"></label><br>
+              <input class="register-input" type="text" placeholder="Userame" id= "regUsername"><br>
+              <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
+              <button class="register-button-modal" id="btnRegister">Register</button>
+            </form>
+            <p class="messageb">Already Registered? <a href="#">Login.</a></p>
+      
+          </div>
+        </div>
+  
+      <!-- Details Footer -->
 
     <footer>
       <div class="footer-content">
@@ -150,9 +171,10 @@
     </footer>
     <script src="../models/Movie.js"></script>
     <script src="../models/Auth.js"></script>
+    <script src="../views/authState.js"></script>
     <script src="../views/movieDetails.js"></script>
     <script src="../views/modalEdit.js"></script>
     <script src="../views/modalDelete.js"></script>
-    <script src="../views/authState.js"></script>
+    
   </body>
 </html>
