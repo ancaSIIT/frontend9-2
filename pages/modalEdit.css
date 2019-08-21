@@ -15,20 +15,25 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(192, 192, 192, 0.5);
   margin: 0 auto;
+
 }
 
 .modal-wrapper {
   margin: 100px auto;
-  border-radius: 5px;
-  border: solid 1px #888888;
+  border-radius: 10px;
+  border: 1px solid rgb(20, 29, 40);
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   background: rgb(20, 29, 40);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
 }
 .logo-edit {
   color: red;
@@ -60,6 +65,10 @@ form.inputs-form input:invalid {
   display: flex;
   justify-content: flex-end;
   background: black;
+  border: 1px solid rgb(20, 29, 40);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
 }
 
 button.save-button {
