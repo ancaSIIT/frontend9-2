@@ -52,7 +52,7 @@ form.inputs-form input[type="text"] {
   margin: 10px;
 }
 
-form input:invalid {
+form.inputs-form input:invalid {
   border: 3px solid red;
 }
 

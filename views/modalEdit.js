@@ -68,14 +68,8 @@ saveButton.onclick = () => {
     inputPoster.value &&
     inputImdbRating.value
   ) {
-    editData.update(editData).then(() => {
-      title.innerHTML = editData.Title;
-      year.innerHTML = editData.Year;
-      genre.innerHTML = editData.Genre;
-      runtime.innerHTML = editData.Runtime;
-      plot.innerHTML = editData.Plot;
-      language.innerHTML = editData.Language;
-      imdbRating.innerHTML = editData.imdbRating;
+    editData.update(editData).then(data => {
+      displayMovieHtml(data);
       editModal.style.display = "none";
     });
   } else {
