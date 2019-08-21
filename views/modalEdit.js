@@ -24,7 +24,7 @@ let inputPoster = document.querySelector(".poster-input");
 let inputGenre = document.querySelector(".genre-input");
 let inputImdbRating = document.querySelector(".rating-input");
 //Open Edit Form
-editButton.onclick = () => {
+openModal = () => {
   inputTitle.setAttribute("value", title.innerHTML);
   inputPlot.setAttribute("value", plot.innerHTML);
   inputYear.setAttribute("value", year.innerHTML);
@@ -36,6 +36,8 @@ editButton.onclick = () => {
 
   editModal.style.display = "block";
 };
+//Open Edit Form
+editButton.onclick = openModal;
 
 //Close Edit Form
 closeButton.onclick = () => {
