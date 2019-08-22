@@ -33,6 +33,7 @@ button {
   height: 30px;
   font-size: 12px;
   text-transform: uppercase;
+
   border-radius: 5px;
   color: white;
   border: 1px solid rgb(20, 29, 40);
@@ -96,10 +97,13 @@ flex-grow: 1;
   margin-right: auto;
   width: 60%;
   height: 40px;
-  background-image: linear-gradient(0deg, #000000,rgb(20, 29, 40) );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .wrapper-border.upper {
+
   margin-top: 20px;
   background-image: linear-gradient(0deg, rgb(20, 29, 40), #000000);
 }
@@ -110,7 +114,7 @@ flex-grow: 1;
   width: 60%;
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
 }
 /*header from main page*/
@@ -157,7 +161,7 @@ flex-grow: 1;
   height: 100px;
   margin: 0 auto;
   border-radius: 50%;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -219,6 +223,68 @@ flex-grow: 1;
   margin-right: auto;
 }
 
+/*login modal */
+.login-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.content-modal {
+  width: 500px;
+  height: 300px;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border: 1px solid rgb(20, 29, 40);
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
+}
+
+.content-modal i {
+  color: red;
+  padding: 20px;
+}
+
+.login-input {
+  width: 60%;
+  display: block;
+  margin: 15px auto;
+}
+
+.login-close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 40px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  color: white;
+}
+
+.login-close:hover {
+  color: red;
+}
+
+.message a {
+  color: red;
+  text-decoration: none;
+}
+
+.loginValidateMessage {
+  color: red;
+  display: none;
+  font-weight: bold;
+}
+
 /* register modal */
 
 .reg-modal {
@@ -227,6 +293,7 @@ flex-grow: 1;
   background-color: rgba(192, 192, 192, 0.5);
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,13 +302,13 @@ flex-grow: 1;
 }
 
 .reg-content {
-  width: 500px;
+  width: 30%;
   /* height: 300px; */
   background-color: black;
   border-radius: 10px;
   text-align: center;
   padding: 20px;
-  position: fixed;
+  position: relative;
   border: 1px solid rgb(20, 29, 40);
   box-shadow: 1px 3px 10px rgb(20, 29, 40);
   z-index: 8;
@@ -250,7 +317,7 @@ flex-grow: 1;
 .register-input {
   width: 60%;
   display: block;
-  margin: 15px auto;
+  margin: auto;
 }
 
 .reg-close {
@@ -282,6 +349,32 @@ flex-grow: 1;
 .registerValidateMessage {
   color: red;
   display: none;
+  font-weight: bold;
+}
+
+
+@media (min-width: 320px) {
+  .reg-content {
+    width: 70%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .reg-content {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reg-content {
+    width: 45%;
+  }
+}
+@media (min-width: 1300px) {
+  .reg-content {
+    width: 35%;
+  }
 }
 
 .username, .far.fa-user {

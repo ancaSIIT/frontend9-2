@@ -23,7 +23,7 @@
       </div>
       <div class="header-right">
         <i class="far fa-user"></i>
-        <span class= "username"></span>
+        <span class="username"></span>
         <button class="logout-button">Logout</button>
         <button class="login-button">Login</button>
         <button class="register-button">Register</button>
@@ -146,21 +146,6 @@
       <div id="movie-article"></div>
     </section>
   </div>
-  <div class="login-modal">
-    <div class="content-modal">
-
-      <div class="login-close">+</div>
-      <i class="fas fa-dragon  fa-3x"></i>
-
-      <form class="loginForm" method="post">
-        <label class="loginValidateMessage"></label>
-        <input class="login-input" type="text" placeholder="Userame" id="username">
-        <input class="login-input" type="password" placeholder="Password" id="password">
-        <button class="login-button-modal" id="btnLogin">Login</button>
-        <p class="message">Don't have an account? <a href="#">Click here.</a></p>
-      </form>
-    </div>
-  </div>
 
   <div class="pagination">
   </div>
@@ -189,7 +174,7 @@
         <div class="addModal-topHeader">
           <i class="fas fa-dragon  fa-3x"></i>
           <h4>New Movie Details</h4>
-          <button id="closeAddModalBtn">+</button>
+          <span id="closeAddModalBtn">&times;</span>
         </div>
       </div>
       <div class="form-content">
@@ -223,14 +208,30 @@
     </div>
   </div>
 
+  <div class="login-modal">
+    <div class="content-modal">
+
+      <div class="login-close">+</div>
+      <i class="fas fa-dragon  fa-3x"></i>
+
+      <form class="loginForm" method="post">
+        <label class="loginValidateMessage"></label>
+        <input class="login-input" type="text" placeholder="Userame" id="username">
+        <input class="login-input" type="password" placeholder="Password" id="password">
+        <button class="login-button-modal" id="btnLogin">Login</button>
+        <p class="message">Don't have an account? <a href="#">Click here.</a></p>
+      </form>
+    </div>
+  </div>
+
   <div class="reg-modal">
     <div class="reg-content">
       <div class="reg-close">+</div>
       <i class="fas fa-dragon  fa-3x"></i>
 
       <form>
-         <label class="registerValidateMessage"></label>
-        <input class="register-input" type="text" placeholder="Userame" id= "regUsername">
+        <label class="registerValidateMessage"></label>
+        <input class="register-input" type="text" placeholder="Userame" id="regUsername">
         <input class="register-input" type="password" placeholder="Password" id="regPassword">
         <button class="register-button-modal" id="btnRegister">Register</button>
       </form>
@@ -238,21 +239,23 @@
 
     </div>
   </div>
-  <script type="text/javascript" src="../models/MovieList.js"></script>
-  <script type="text/javascript" src="../models/Auth.js"></script>
-  <script type="text/javascript" src="../views/authState.js"></script>
-  <script type="text/javascript" src="../models/SearchFilter.js"></script>
-  <script type="text/javascript" src="../views/home.js"></script>
-  <script type="text/javascript" src="../views/filter.js"></script>
-  
   <div id="movie-template">
     <a href="" class="movie-title"></a>
     <div class="movie-template-buttons">
-      <button>Delete</button>
-      <button>Edit</button>
+      <button class="delete-button-homepage" name="deleteButton">Delete</button>
+      <button class="homepage-editbtn" name="editButton">Edit</button>
     </div>
   </div>
-  
+
+  <script type="text/javascript" src="../models/Movie.js"></script>
+  <script type="text/javascript" src="../models/MovieList.js"></script>
+  <script type="text/javascript" src="../models/Auth.js"></script>
+  <script type="text/javascript" src="../models/SearchFilter.js"></script>
+  <script type="text/javascript" src="../views/home.js"></script>
+  <script type="text/javascript" src="../views/authState.js"></script>
+  <script type="text/javascript" src="../views/filter.js"></script>
+  <script type="text/javascript" src="../views/modalEdit.js"></script>
+
 </body>
 
 </html>
