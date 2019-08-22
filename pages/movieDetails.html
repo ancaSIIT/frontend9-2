@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="movieDetails.css" />
     <link rel="stylesheet" href="modalDelete.css" media="screen" />
     <link rel="stylesheet" href="modalEdit.css" />
@@ -18,23 +19,17 @@
 
   <body>
     <header>
-      <div class="header-wrapper wrapper">
+      <div class="header-wrapper">
         <div class="header-left">
           <a href="home.html"><i class="fas fa-dragon  fa-3x"></i></a>
-          <input
-            class="search-value"
-            type="search"
-            name="search"
-            placeholder="Search"
-          />
-          <button class="search-button button shadow">Search</button>
+          <p> My IMDB Page </p>
         </div>
         <div class="header-right">
-            <i class="far fa-user"></i>
-            <span class= "username"></span>
-          <button class="login-button button shadow">Login</button>
-          <button class="register-button button shadow">Register</button>
-          <button class="logout-button button shadow">Logout</button>
+          <i class="far fa-user"></i>
+          <span class= "username"></span>
+          <button class="login-button ">Login</button>
+          <button class="register-button ">Register</button>
+          <button class="logout-button ">Logout</button>
         </div>
       </div>
     </header>
@@ -69,96 +64,97 @@
       </section>
       <button class="edit-button" name="button">Edit</button>
       <button class="delete-button" name="button">Delete</button>
+    </div>
 
       <!-- Edit Modal -->
-      <div class="modal-shadow">
-        <div class="modal-wrapper">
-          <div class="modal-header">
-            <i class="fas fa-dragon logo-edit"></i>
-            <p>Edit this movie.</p>
-            <span class="edit-close">&#935;</span>
-          </div>
-          <form class="inputs-form">
-            <label for="title">Title:</label>
-            <input class="title-input" type="text" name="title" required />
-            <label for="plot">Plot:</label>
-            <input class="plot-input" type="text" name="plot" required />
-            <label for="year">Year:</label>
-            <input class="year-input" type="text" name="year" required />
-            <label for="language">Language:</label>
-            <input
-              class="language-input"
-              type="text"
-              name="language"
-              required
-            />
-            <label for="runtime">Runtime:</label>
-            <input class="runtime-input" type="text" name="runtime" required />
-            <label for="poster">PosterUrl:</label>
-            <input class="poster-input" type="text" name="poster" required />
-            <label for="genre">Genre:</label>
-            <input class="genre-input" type="text" name="genre" required />
-            <label for="rating">Rating:</label>
-            <input class="rating-input" type="text" name="rating" required />
-          </form>
-          <div class="buttons">
-            <button class="save-button">Save</button>
-            <button class="close-button">Close</button>
-          </div>
+    <div class="modal-shadow">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          <i class="fas fa-dragon logo-edit"></i>
+          <p>Edit this movie.</p>
+          <span class="edit-close">&#935;</span>
+        </div>
+        <form class="inputs-form">
+          <label for="title">Title:</label>
+          <input class="title-input" type="text" name="title" required />
+          <label for="plot">Plot:</label>
+          <input class="plot-input" type="text" name="plot" required />
+          <label for="year">Year:</label>
+          <input class="year-input" type="text" name="year" required />
+          <label for="language">Language:</label>
+          <input
+            class="language-input"
+            type="text"
+            name="language"
+            required
+          />
+          <label for="runtime">Runtime:</label>
+          <input class="runtime-input" type="text" name="runtime" required />
+          <label for="poster">PosterUrl:</label>
+          <input class="poster-input" type="text" name="poster" required />
+          <label for="genre">Genre:</label>
+          <input class="genre-input" type="text" name="genre" required />
+          <label for="rating">Rating:</label>
+          <input class="rating-input" type="text" name="rating" required />
+        </form>
+        <div class="buttons">
+          <button class="save-button">Save</button>
+          <button class="close-button">Close</button>
         </div>
       </div>
+    </div>
 
       <!-- Delete Modal -->
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-content-header">
-            <i class="fas fa-dragon"></i>
-            <p>Are you sure you want to delete this movie?</p>
-            <span class="close">&times;</span>
-          </div>
-          <div class="modal-content-buttons">
-            <button class="button-yes">YES</button>
-            <button class="button-no">NO</button>
-          </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-content-header">
+          <i class="fas fa-dragon"></i>
+          <p>Are you sure you want to delete this movie?</p>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-content-buttons">
+          <button class="button-yes">YES</button>
+          <button class="button-no">NO</button>
         </div>
       </div>
+    </div>
 
     <div class="wrapper-border"></div>
 
     <!-- Login Modal -->
-       <div class="login-modal">
-         <div class="content-modal">
+    <div class="login-modal">
+      <div class="content-modal">
 
-           <div class="login-close">+</div>
-           <i class="fas fa-dragon  fa-3x"></i>
+        <div class="login-close">+</div>
+        <i class="fas fa-dragon  fa-3x"></i>
 
-           <form class="loginForm" method="post">
-             <label class="loginValidateMessage"></label>
-             <input class="login-input" type="text" placeholder="Userame" id="username">
-             <input class="login-input" type="password" placeholder="Password" id="password">
-             <button class="login-button-modal" id="btnLogin">Login</button>
-             <p class="message">Don't have an account? <a href="#">Click here.</a></p>
-           </form>
-         </div>
-       </div>
+        <form class="loginForm" method="post">
+          <label class="loginValidateMessage"></label>
+          <input class="login-input" type="text" placeholder="Userame" id="username">
+          <input class="login-input" type="password" placeholder="Password" id="password">
+          <button class="login-button-modal" id="btnLogin">Login</button>
+          <p class="message">Don't have an account? <a href="#">Click here.</a></p>
+        </form>
+      </div>
+    </div>
 
      <!-- Register Modal -->
 
-      <div class="reg-modal">
-          <div class="reg-content">
-            <div class="reg-close">+</div>
-            <i class="fas fa-dragon  fa-3x"></i>
+    <div class="reg-modal">
+        <div class="reg-content">
+          <div class="reg-close">+</div>
+          <i class="fas fa-dragon  fa-3x"></i>
 
-            <form>
-               <label class="registerValidateMessage"></label><br>
-              <input class="register-input" type="text" placeholder="Userame" id= "regUsername"><br>
-              <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
-              <button class="register-button-modal" id="btnRegister">Register</button>
-            </form>
-            <p class="messageb">Already Registered? <a href="#">Login.</a></p>
+          <form>
+              <label class="registerValidateMessage"></label><br>
+            <input class="register-input" type="text" placeholder="Userame" id= "regUsername"><br>
+            <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
+            <button class="register-button-modal" id="btnRegister">Register</button>
+          </form>
+          <p class="messageb">Already Registered? <a href="#">Login.</a></p>
 
-          </div>
         </div>
+      </div>
 
       <!-- Details Footer -->
 
