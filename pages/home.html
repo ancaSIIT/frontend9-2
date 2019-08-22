@@ -17,6 +17,7 @@
     <div class="header-wrapper wrapper">
       <div class="header-left">
         <a href=""><i class="fas fa-dragon  fa-3x"></i></a>
+        <label class="search-validate-message"></label>
         <input class="search-value" type="search" name="search" placeholder="Search" />
         <button class="search-button">Search</button>
       </div>
@@ -33,10 +34,11 @@
 
   <div class="content-wrapper wrapper">
     <aside class="container-shadow">
-      <p>ADD FILTERS</p>
+      <p>ADD FILTERS <button class="reset-button"><i class="fas fa-undo"></i></button></p>
       <div class="navigation-menu">
         <div>
           <h4>Genre</h4>
+          <br>
           <form>
             <input type="radio" name="genre" value="All" checked> All<br>
             <input type="radio" name="genre" value="action"> Action<br>
@@ -46,13 +48,14 @@
             <input type="radio" name="genre" value="documentary"> Documentary<br>
             <input type="radio" name="genre" value="horror"> Horror<br>
             <input type="radio" name="genre" value="mystery"> Mystery<br>
-            <input type="radio" name="genre" value="fan-sci"> Fantasy and Sci-Fi<br>
+            <input type="radio" name="genre" value="sci-fi"> Sci-Fi<br>
             <input type="radio" name="genre" value="short"> Short<br>
             <input type="radio" name="genre" value="thriller"> Thriller
           </form>
         </div>
         <div>
           <h4>Language</h4>
+          <br>
           <form>
             <input type="radio" name="language" value="All" checked> All<br>
             <input type="radio" name="language" value="English"> English<br>
@@ -66,6 +69,7 @@
         </div>
         <div>
           <h4>Year</h4>
+          <br>
           <div id="scrollDownYears">
             <form>
               <input type="radio" name="year" value="All" checked> All<br>
@@ -125,72 +129,17 @@
         </div>
         <div>
           <h4>Country</h4>
+          <br>
           <form>
             <input type="radio" name="country" value="All" checked> All<br>
-            <input type="radio" name="country" value="uk"> UK<br>
+            <input type="radio" name="country" value="UK"> UK<br>
             <input type="radio" name="country" value="USA"> USA<br>
-            <input type="radio" name="country" value="romania"> Romania<br>
-            <input type="radio" name="country" value="denmark"> Denmark<br>
-            <input type="radio" name="country" value="philippines"> Philippines<br>
-            <input type="radio" name="country" value="japan"> Japan
+            <input type="radio" name="country" value="Romania"> Romania<br>
+            <input type="radio" name="country" value="Denmark"> Denmark<br>
+            <input type="radio" name="country" value="Philippines"> Philippines<br>
+            <input type="radio" name="country" value="Japan"> Japan
           </form>
         </div>
-        <div>
-          <h4>Rating</h4>
-
-          <!-- <form name="registrationForm">
-                <input type="range" name="ageInputName" id="ageInputId" value="0.10" min="0" max="10" step="0.1" oninput="ageOutputId.value = ageInputId.value">
-                <output name="ageOutputName" id="ageOutputId">10</output>
-            </form> -->
-          <div class="value">0</div>
-          <input type="range" min="0" max="10" step="0.1" value="0">
-          </br>
-          </br>
-        </div>
-
-        <!--
-          <label class="container-checkbox">Action & Adventure
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">Drama
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">Horror
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">Romance
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">Comedy
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">Sci-Fi
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <h4>Year</h4>
-          <label class="container-checkbox">1990-2000
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">2001-2007
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">2008-2013
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checkbox">2014-2019
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <img src="../assets/pictures/filter-movie.png" alt=""> -->
       </div>
     </aside>
     <section>
