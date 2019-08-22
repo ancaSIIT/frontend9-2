@@ -69,9 +69,9 @@
   display:block;
   margin: 5px 14px 5px 5px;
   padding-bottom: 5px;
-  transform: rotate(45deg);
   font-size: 30px;
   box-shadow: none;
+  cursor: pointer;
 
 }
 #closeAddModalBtn:hover {
@@ -124,7 +124,7 @@ h4 {
   
 }
 
-@media (min-width: 320px) {
+@media (min-width: 200px) {
   .addModal-content {
     width: 70%;
     right: 15%;

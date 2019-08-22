@@ -383,7 +383,7 @@ footer {
   z-index: 8;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 200px) {
   .reg-content {
     width: 70%;
   }
