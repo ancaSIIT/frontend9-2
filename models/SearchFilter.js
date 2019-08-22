@@ -30,8 +30,8 @@ function getCurrentSearchFilters() {
   }
   const searchInput = document.querySelector(".search-value");
   const searchInputVal = searchInput.value;
-  currentSearchFilters.Title = searchInputVal;
-  console.log(searchInputVal);
+  if (searchInputVal) {
+      currentSearchFilters.Title = searchInputVal;}
   console.log(currentSearchFilters);
   
   return currentSearchFilters;

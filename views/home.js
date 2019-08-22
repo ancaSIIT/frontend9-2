@@ -347,10 +347,31 @@ document.querySelector(".messageb a").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "none";
 });
 
-//range slider
+//reset button
 
-var elem = document.querySelector('input[type="range"]');
 
+<<<<<<< HEAD
+let resetFiltersButton = document.querySelector(".reset-button");
+resetFiltersButton.addEventListener("click", resetFilter);
+
+function resetFilter() {
+  var genreEl = document.getElementsByName("genre");
+  for(let i=0;i<genreEl.length;i++)
+  genreEl[0].checked = true;
+
+  let languageEl = document.getElementsByName("language");
+  for(let i=0;i<languageEl.length;i++)
+  languageEl[0].checked = true;
+
+  let yearEl = document.getElementsByName("year");
+  for(let i=0;i<yearEl.length;i++)
+  yearEl[0].checked = true;
+
+  let countryEl = document.getElementsByName("country");
+  for(let i=0;i<countryEl.length;i++)
+  countryEl[0].checked = true;
+}
+=======
 var rangeValue = function() {
   var newValue = elem.value;
   var target = document.querySelector(".value");
@@ -358,3 +379,4 @@ var rangeValue = function() {
 };
 
 elem.addEventListener("input", rangeValue);
+>>>>>>> ae8716dfed442e0ddba06209492e0490d330ef18

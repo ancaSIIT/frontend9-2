@@ -22,9 +22,9 @@ function getResultsAll(){
       newList = movieList.results;
       createMovies(newList);
       createPagination(movieList)
-
-    })
-  } else {
+    });
+  }
+  else if ((searchInputVal) & searchInputVal.length > 2 ){ 
     const queryParams = {};
     queryParams.title = document.querySelector(".search-value").value;
     movies.getMoviesByTitle(queryParams).then(function (movieList) {
@@ -32,9 +32,19 @@ function getResultsAll(){
     createMovies(movieList.results);
     createPagination(movieList);
   });
+  } 
+  else if (searchInputVal ==""){
+    const messageEl = document.querySelector(".search-validate-message");
+    searchInput.style.border = "2px solid red";
+    messageEl.innerHTML = "Please input title";
+    messageEl.style.display = "compact";
+    }
+    else {
+    messageEl.style.display = "none";
+    messageEl.innerHTML = "";
+    searchInput.style.border = "none";
+    }
   }
 
-
-}
 
 
