@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="movieDetails.css" />
-    <link rel="stylesheet" href="modalDelete.css" media="screen" />
-    <link rel="stylesheet" href="modalEdit.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-    <title>Movie Details</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="header-wrapper">
-        <div class="header-left">
-          <a href="home.html"><i class="fas fa-dragon  fa-3x"></i></a>
-          <p> My IMDB Page </p>
-        </div>
-        <div class="header-right">
-          <i class="far fa-user"></i>
-          <span class= "username"></span>
-          <button class="login-button ">Login</button>
-          <button class="register-button ">Register</button>
-          <button class="logout-button ">Logout</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="movieDetails.css" />
+  <link rel="stylesheet" href="modalDelete.css" media="screen" />
+  <link rel="stylesheet" href="modalEdit.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <title>Movie Details</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapper wrapper">
+      <div class="header-left">
+        <a href="home.html"><i class="fas fa-dragon  fa-3x"></i></a>
+        <p> My IMDB Page </p>
       </div>
-    </header>
-    <div class="wrapper-border upper"></div>
-    <div class="container">
-      <h2 class="title"></h2>
-      <p class="plot"></p>
-      <div class="image">
-        <img class="posterUrl" alt="Poster" />
+      <div class="header-right">
+        <i class="far fa-user"></i>
+        <span class="username"></span>
+        <button class="login-button button shadow">Login</button>
+        <button class="register-button button shadow">Register</button>
+        <button class="logout-button button shadow">Logout</button>
       </div>
-      <section class="details">
-        <p>
-          Year:
-          <span class="year"> </span>
-        </p>
-        <p>
-          Language:
-          <span class="language"></span>
-        </p>
-        <p>
-          Runtime:
-          <span class="runtime"></span>
-        </p>
-        <p>
-          Genre:
-          <span class="genre"></span>
-        </p>
-        <p>
-          Imdb Rating:
-          <span class="imdbRating"></span>
-        </p>
-      </section>
+    </div>
+  </header>
+  <div class="wrapper-border upper"></div>
+  <div class="container">
+    <h2 class="title"></h2>
+    <p class="plot"></p>
+    <div class="image">
+      <img class="posterUrl" alt="Poster" />
+    </div>
+    <section class="details">
+      <p>
+        Year:
+        <span class="year"> </span>
+      </p>
+      <p>
+        Language:
+        <span class="language"></span>
+      </p>
+      <p>
+        Runtime:
+        <span class="runtime"></span>
+      </p>
+      <p>
+        Genre:
+        <span class="genre"></span>
+      </p>
+      <p>
+        Imdb Rating:
+        <span class="imdbRating"></span>
+      </p>
+    </section>
+    <div class = "container-buttons">
       <button class="edit-button" name="button">Edit</button>
       <button class="delete-button" name="button">Delete</button>
     </div>
+    </div>
+    <div class="wrapper-border"></div>
+      
 
-      <!-- Edit Modal -->
+    <!-- Edit Modal -->
     <div class="modal-shadow">
       <div class="modal-wrapper">
         <div class="modal-header">
@@ -82,12 +83,7 @@
           <label for="year">Year:</label>
           <input class="year-input" type="text" name="year" required />
           <label for="language">Language:</label>
-          <input
-            class="language-input"
-            type="text"
-            name="language"
-            required
-          />
+          <input class="language-input" type="text" name="language" required />
           <label for="runtime">Runtime:</label>
           <input class="runtime-input" type="text" name="runtime" required />
           <label for="poster">PosterUrl:</label>
@@ -104,7 +100,7 @@
       </div>
     </div>
 
-      <!-- Delete Modal -->
+    <!-- Delete Modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <div class="modal-content-header">
@@ -118,8 +114,6 @@
         </div>
       </div>
     </div>
-
-    <div class="wrapper-border"></div>
 
     <!-- Login Modal -->
     <div class="login-modal">
@@ -138,25 +132,25 @@
       </div>
     </div>
 
-     <!-- Register Modal -->
+    <!-- Register Modal -->
 
     <div class="reg-modal">
-        <div class="reg-content">
-          <div class="reg-close">+</div>
-          <i class="fas fa-dragon  fa-3x"></i>
+      <div class="reg-content">
+        <div class="reg-close">+</div>
+        <i class="fas fa-dragon  fa-3x"></i>
 
-          <form>
-              <label class="registerValidateMessage"></label><br>
-            <input class="register-input" type="text" placeholder="Userame" id= "regUsername"><br>
-            <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
-            <button class="register-button-modal" id="btnRegister">Register</button>
-          </form>
-          <p class="messageb">Already Registered? <a href="#">Login.</a></p>
+        <form>
+          <label class="registerValidateMessage"></label><br>
+          <input class="register-input" type="text" placeholder="Userame" id="regUsername"><br>
+          <input class="register-input" type="password" placeholder="Password" id="regPassword"><br>
+          <button class="register-button-modal" id="btnRegister">Register</button>
+        </form>
+        <p class="messageb">Already Registered? <a href="#">Login.</a></p>
 
-        </div>
       </div>
+    </div>
 
-      <!-- Details Footer -->
+    <!-- Details Footer -->
 
     <footer>
       <div class="footer-content">
@@ -184,9 +178,10 @@
     <script src="../models/Movie.js"></script>
     <script src="../models/Auth.js"></script>
     <script src="../views/authState.js"></script>
-    <script src="../views/movieDetails.js"></script>
     <script src="../views/modalEdit.js"></script>
+    <script src="../views/movieDetails.js"></script>    
     <script src="../views/modalDelete.js"></script>
 
-  </body>
+</body>
+
 </html>

@@ -24,7 +24,7 @@ let inputPoster = document.querySelector(".poster-input");
 let inputGenre = document.querySelector(".genre-input");
 let inputImdbRating = document.querySelector(".rating-input");
 //Open Edit Form
-editButton.onclick = () => {
+openModal = () => {
   inputTitle.setAttribute("value", title.innerHTML);
   inputPlot.setAttribute("value", plot.innerHTML);
   inputYear.setAttribute("value", year.innerHTML);
@@ -36,6 +36,8 @@ editButton.onclick = () => {
 
   editModal.style.display = "block";
 };
+//Open Edit Form
+editButton.onclick = openModal;
 
 //Close Edit Form
 closeButton.onclick = () => {
@@ -68,14 +70,8 @@ saveButton.onclick = () => {
     inputPoster.value &&
     inputImdbRating.value
   ) {
-    editData.update(editData).then(() => {
-      title.innerHTML = editData.Title;
-      year.innerHTML = editData.Year;
-      genre.innerHTML = editData.Genre;
-      runtime.innerHTML = editData.Runtime;
-      plot.innerHTML = editData.Plot;
-      language.innerHTML = editData.Language;
-      imdbRating.innerHTML = editData.imdbRating;
+    editData.update(editData).then(data => {
+      displayMovieHtml(data);
       editModal.style.display = "none";
     });
   } else {
