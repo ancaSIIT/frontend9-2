@@ -45,8 +45,17 @@ function createPagination(movieList) {
 function createMovies(movieList) {
   if (!movieList.length) {
     let movieArticle = document.getElementById("movie-article");
-    movieArticle.innerHTML =
-      "There are no results for this search. Please try a new search with a different keyword or filter.";
+    movieArticle.innerHTML ="";
+    let noResultsSorry = document.createElement("div");
+    noResultsSorry.classList.add('no-results-message-s');
+    noResultsSorry.innerText="Sorry!";
+    movieArticle.appendChild(noResultsSorry);
+    let noResults = document.createElement("div");
+    noResults.classList.add('no-results-message');
+    noResults.innerText= "There are no results for this search. Please try a new search with a different keyword or filter.";
+    movieArticle.appendChild(noResults);
+    // movieArticle.innerHTML =
+    //   "There are no results for this search. Please try a new search with a different keyword or filter.";
     return;
   }
   let movieArticle = document.getElementById("movie-article");
@@ -350,12 +359,11 @@ document.querySelector(".messageb a").addEventListener("click", function() {
 //reset button
 
 
-<<<<<<< HEAD
 let resetFiltersButton = document.querySelector(".reset-button");
 resetFiltersButton.addEventListener("click", resetFilter);
 
 function resetFilter() {
-  var genreEl = document.getElementsByName("genre");
+  let genreEl = document.getElementsByName("genre");
   for(let i=0;i<genreEl.length;i++)
   genreEl[0].checked = true;
 
@@ -370,13 +378,7 @@ function resetFilter() {
   let countryEl = document.getElementsByName("country");
   for(let i=0;i<countryEl.length;i++)
   countryEl[0].checked = true;
-}
-=======
-var rangeValue = function() {
-  var newValue = elem.value;
-  var target = document.querySelector(".value");
-  target.innerHTML = newValue;
-};
 
-elem.addEventListener("input", rangeValue);
->>>>>>> ae8716dfed442e0ddba06209492e0490d330ef18
+  document.querySelector(".search-value").value ="";
+  
+}

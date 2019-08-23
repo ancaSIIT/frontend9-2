@@ -1,17 +1,34 @@
 
 
 const searchButton = document.querySelector(".search-button");
-searchButton.addEventListener("click", getResultsAll);
 const searchInput = document.querySelector(".search-value");
+const searchErrorMessage = document.getElementById("search-error-message")
+
 searchInput.onkeyup = (event) => {
-  if (event.keyCode === 13) {
-    getResultsAll();
+  let currentSearchFilters = getCurrentSearchFilters()
+  if (searchInput.value ==="" & (!Object.keys(currentSearchFilters).length)){
+    searchInput.style.backgroundColor = "red";
+    searchErrorMessage.style.display = "inline-block";
   }
-};
+  getResultsAll();
+  }
 
+searchButton.addEventListener("click", function() {
+  let currentSearchFilters = getCurrentSearchFilters()
+  if (searchInput.value ==="" & (!Object.keys(currentSearchFilters).length)){
+    searchInput.style.backgroundColor = "red";
+    searchErrorMessage.style.display = "inline-block";
+  }
+  getResultsAll();
+})
 
+searchButton.addEventListener("focusout", function(){
+  searchInput.style.backgroundColor = "black";
+  searchErrorMessage.style.display = "none";
+
+})
 function getResultsAll(){
-  //front-end filter
+ 
   const searchInput = document.querySelector(".search-value");
   const searchInputVal = searchInput.value;
   let currentSearchFilters = getCurrentSearchFilters();
@@ -33,18 +50,4 @@ function getResultsAll(){
     createPagination(movieList);
   });
   } 
-  else if (searchInputVal ==""){
-    const messageEl = document.querySelector(".search-validate-message");
-    searchInput.style.border = "2px solid red";
-    messageEl.innerHTML = "Please input title";
-    messageEl.style.display = "compact";
-    }
-    else {
-    messageEl.style.display = "none";
-    messageEl.innerHTML = "";
-    searchInput.style.border = "none";
-    }
   }
-
-
-
