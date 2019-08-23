@@ -6,6 +6,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   margin: 0;
+  padding: 0;
   background-color:#000000;
 }
 
@@ -33,7 +34,6 @@ button {
   height: 30px;
   font-size: 12px;
   text-transform: uppercase;
-
   border-radius: 5px;
   color: white;
   border: 1px solid rgb(20, 29, 40);
@@ -97,13 +97,10 @@ flex-grow: 1;
   margin-right: auto;
   width: 60%;
   height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-image: linear-gradient(0deg, #000000,rgb(20, 29, 40) );
 }
 
 .wrapper-border.upper {
-
   margin-top: 20px;
   background-image: linear-gradient(0deg, rgb(20, 29, 40), #000000);
 }
@@ -114,39 +111,29 @@ flex-grow: 1;
   width: 60%;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: baseline;
 }
+
 /*header from main page*/
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-wrapper {
-  height: 60px;
+.header-left {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.header-left {
-  flex-grow: 1;
+.header-left p {
+  color: white;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-family: 'Pacifico', cursive;
 }
 
 .header-left i {
   color: red;
   margin: 0 10px 0 0;
-}
-
-.button {
-  width: 80px;
-  height: 30px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border-radius: 5px;
-  color: white;
 }
 
 .shadow {
@@ -379,4 +366,34 @@ flex-grow: 1;
 
 .username, .far.fa-user {
   color: white;
+}
+
+@media (width: 320px) {
+  .container,
+  .wrapper-border {
+    padding: 2px;
+    min-width: 100%;
+  }
+  .details {
+    display: inline-block;
+  }
+  .header-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .footer-copyright p {
+    text-align: center;
+  }
+  .container-buttons {
+    display: block;
+  }
+  .header-left p {
+    display: none;
+  }
+}
+
+@media (width: 768px) {
+  .header-left p {
+    display: none;
+  }
 }

@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="movieDetails.css" />
   <link rel="stylesheet" href="modalDelete.css" media="screen" />
   <link rel="stylesheet" href="modalEdit.css" />
@@ -18,8 +19,7 @@
     <div class="header-wrapper wrapper">
       <div class="header-left">
         <a href="home.html"><i class="fas fa-dragon  fa-3x"></i></a>
-        <input class="search-value" type="search" name="search" placeholder="Search" />
-        <button class="search-button button shadow">Search</button>
+        <p> My IMDB Page </p>
       </div>
       <div class="header-right">
         <i class="far fa-user"></i>
@@ -59,7 +59,13 @@
         <span class="imdbRating"></span>
       </p>
     </section>
-
+    <div class = "container-buttons">
+      <button class="edit-button" name="button">Edit</button>
+      <button class="delete-button" name="button">Delete</button>
+    </div>
+    </div>
+    <div class="wrapper-border"></div>
+      
 
     <!-- Edit Modal -->
     <div class="modal-shadow">
@@ -108,13 +114,6 @@
         </div>
       </div>
     </div>
-
-    <div class="wrapper-border">
-      <button class="edit-button" name="button">Edit</button>
-      <button class="delete-button" name="button">Delete</button>
-    </div>
-
-    <!-- Details Footer -->
 
     <!-- Login Modal -->
     <div class="login-modal">
