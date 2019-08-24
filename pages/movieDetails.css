@@ -222,6 +222,7 @@ flex-grow: 1;
   justify-content: center;
   align-items: center;
   display: none;
+  z-index: 7;
 }
 
 .content-modal {
@@ -259,6 +260,10 @@ flex-grow: 1;
 
 .login-close:hover {
   color: red;
+}
+
+.message {
+  color: white;
 }
 
 .message a {
@@ -344,7 +349,7 @@ flex-grow: 1;
   .reg-content {
     width: 70%;
   }
-  
+
 }
 
 @media (min-width: 768px) {
