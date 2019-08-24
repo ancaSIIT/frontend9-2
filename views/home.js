@@ -350,7 +350,6 @@ document.querySelector(".messageb a").addEventListener("click", function() {
 //reset button
 
 
-<<<<<<< HEAD
 let resetFiltersButton = document.querySelector(".reset-button");
 resetFiltersButton.addEventListener("click", resetFilter);
 
@@ -371,12 +370,3 @@ function resetFilter() {
   for(let i=0;i<countryEl.length;i++)
   countryEl[0].checked = true;
 }
-=======
-var rangeValue = function() {
-  var newValue = elem.value;
-  var target = document.querySelector(".value");
-  target.innerHTML = newValue;
-};
-
-elem.addEventListener("input", rangeValue);
->>>>>>> ae8716dfed442e0ddba06209492e0490d330ef18
