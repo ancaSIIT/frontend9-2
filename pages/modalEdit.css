@@ -55,7 +55,8 @@ form.inputs-form {
   justify-content: space-evenly;
 }
 
-form label {
+form.inputs-form label {
+  color: white;
   margin: 10px;
 }
 
