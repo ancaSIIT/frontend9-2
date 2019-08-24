@@ -4,6 +4,7 @@ let editModal = document.querySelector(".modal-shadow");
 let editClose = document.querySelector(".edit-close");
 let saveButton = document.querySelector(".save-button");
 let closeButton = document.querySelector(".close-button");
+let resetForm = document.querySelector(".inputs-form");
 
 //Details classes
 let title = document.querySelector(".title");
@@ -14,6 +15,7 @@ let runtime = document.querySelector(".runtime");
 let poster = document.querySelector(".posterUrl");
 let genre = document.querySelector(".genre");
 let imdbRating = document.querySelector(".imdbRating");
+
 //Input classes
 let inputTitle = document.querySelector(".title-input");
 let inputPlot = document.querySelector(".plot-input");
@@ -23,6 +25,7 @@ let inputRuntime = document.querySelector(".runtime-input");
 let inputPoster = document.querySelector(".poster-input");
 let inputGenre = document.querySelector(".genre-input");
 let inputImdbRating = document.querySelector(".rating-input");
+
 //Open Edit Form
 openModal = () => {
   inputTitle.setAttribute("value", title.innerHTML);
@@ -36,22 +39,27 @@ openModal = () => {
 
   editModal.style.display = "block";
 };
+
 //Open Edit Form
-if(editButton) {
-    editButton.onclick = openModal;
+if (editButton) {
+  editButton.onclick = openModal;
 
-    //Close Edit Form
-    closeButton.onclick = () => {
+  //Close Edit Form
+  closeButton.onclick = () => {
+    resetForm.reset();
     editModal.style.display = "none";
-    };
-    //Close Edit Form from X
-    editClose.onclick = () => {
-    editModal.style.display = "none";
-    };
+  };
 
-    var editData = new Movie({});
-    //Save Edit Form
-    saveButton.onclick = () => {
+  //Close Edit Form from X
+  editClose.onclick = () => {
+    resetForm.reset();
+    editModal.style.display = "none";
+  };
+
+  var editData = new Movie({});
+
+  //Save Edit Form
+  saveButton.onclick = () => {
     editData.Title = inputTitle.value;
     editData.Year = inputYear.value;
     editData.Genre = inputGenre.value;
@@ -61,6 +69,7 @@ if(editButton) {
     editData.Poster = inputPoster.value;
     editData.imdbRating = inputImdbRating.value;
     editData.id = movieId;
+
     if (
       inputTitle.value &&
       inputYear.value &&
