@@ -154,7 +154,7 @@ registerBtn.addEventListener("click", function(e) {
   } else if (username.length < 8) {
     usernameElement.style.border = "2px solid red";
     messageElement.innerHTML =
-      "Username and password must have at least 8 caracthers.";
+      "Username and password must have at least 8 characters.";
     messageElement.style.display = "inline";
   } else {
     usernameElement.style.border = "1px solid black";
@@ -167,12 +167,12 @@ registerBtn.addEventListener("click", function(e) {
   } else if (password.length < 8) {
     usernameElement.style.border = "2px solid red";
     messageElement.innerHTML =
-      "Username and password must have at least 8 caracthers.";
+      "Username and password must have at least 8 characters.";
     messageElement.style.display = "inline";
   } else if (username.length < 8) {
     usernameElement.style.border = "2px solid red";
     messageElement.innerHTML =
-      "Username and password must have at least 8 caracthers.";
+      "Username and password must have at least 8 characters.";
     messageElement.style.display = "inline";
   } else {
     passwordElement.style.border = "1px solid black";
