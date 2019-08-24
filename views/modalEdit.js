@@ -37,44 +37,46 @@ openModal = () => {
   editModal.style.display = "block";
 };
 //Open Edit Form
-editButton.onclick = openModal;
+if(editButton) {
+    editButton.onclick = openModal;
 
-//Close Edit Form
-closeButton.onclick = () => {
-  editModal.style.display = "none";
-};
-//Close Edit Form from X
-editClose.onclick = () => {
-  editModal.style.display = "none";
-};
+    //Close Edit Form
+    closeButton.onclick = () => {
+    editModal.style.display = "none";
+    };
+    //Close Edit Form from X
+    editClose.onclick = () => {
+    editModal.style.display = "none";
+    };
 
-var editData = new Movie({});
-//Save Edit Form
-saveButton.onclick = () => {
-  editData.Title = inputTitle.value;
-  editData.Year = inputYear.value;
-  editData.Genre = inputGenre.value;
-  editData.Runtime = inputRuntime.value;
-  editData.Plot = inputPlot.value;
-  editData.Language = inputLanguage.value;
-  editData.Poster = inputPoster.value;
-  editData.imdbRating = inputImdbRating.value;
-  editData.id = movieId;
-  if (
-    inputTitle.value &&
-    inputYear.value &&
-    inputGenre.value &&
-    inputRuntime.value &&
-    inputPlot.value &&
-    inputLanguage.value &&
-    inputPoster.value &&
-    inputImdbRating.value
-  ) {
-    editData.update(editData).then(data => {
-      displayMovieHtml(data);
-      editModal.style.display = "none";
-    });
-  } else {
-    console.log("Err: Edit Input/s Have Empty Field/s");
-  }
-};
+    var editData = new Movie({});
+    //Save Edit Form
+    saveButton.onclick = () => {
+    editData.Title = inputTitle.value;
+    editData.Year = inputYear.value;
+    editData.Genre = inputGenre.value;
+    editData.Runtime = inputRuntime.value;
+    editData.Plot = inputPlot.value;
+    editData.Language = inputLanguage.value;
+    editData.Poster = inputPoster.value;
+    editData.imdbRating = inputImdbRating.value;
+    editData.id = movieId;
+    if (
+      inputTitle.value &&
+      inputYear.value &&
+      inputGenre.value &&
+      inputRuntime.value &&
+      inputPlot.value &&
+      inputLanguage.value &&
+      inputPoster.value &&
+      inputImdbRating.value
+    ) {
+      editData.update(editData).then(data => {
+        displayMovieHtml(data);
+        editModal.style.display = "none";
+      });
+    } else {
+      console.log("Err: Edit Input/s Have Empty Field/s");
+    }
+  };
+}

@@ -17,7 +17,7 @@
     <div class="header-wrapper wrapper">
       <div class="header-left">
         <a href=""><i class="fas fa-dragon  fa-3x"></i></a>
-        <label class="search-validate-message"></label>
+        <label id="search-error-message">Please enter a value.</label>
         <input class="search-value" type="search" name="search" placeholder="Search" />
         <button class="search-button">Search</button>
       </div>
@@ -33,112 +33,334 @@
   </header>
 
   <div class="content-wrapper wrapper">
-    <aside class="container-shadow">
-      <p>ADD FILTERS <button class="reset-button"><i class="fas fa-undo"></i></button></p>
+    <aside class="container-ra-shadow">
+      <p id="add-filters">ADD FILTERS <button class="reset-button"><i class="fas fa-undo"></i></button></p>
       <div class="navigation-menu">
-        <div>
+        <div class="filters">
           <h4>Genre</h4>
-          <br>
-          <form>
+          <label class="container-radio">
             <input type="radio" name="genre" value="All" checked> All<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="action"> Action<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="adventure"> Adventure<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="animation"> Animation<br>
+            <span class="checkmark"></span>
+          </label>  
+          <label class="container-radio">
             <input type="radio" name="genre" value="comedy"> Comedy<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="documentary"> Documentary<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="horror"> Horror<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="mystery"> Mystery<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="sci-fi"> Sci-Fi<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="short"> Short<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="genre" value="thriller"> Thriller
-          </form>
+            <span class="checkmark"></span>
+          </label>
         </div>
-        <div>
+        <div class="filters">
           <h4>Language</h4>
-          <br>
-          <form>
+          <label class="container-radio">
             <input type="radio" name="language" value="All" checked> All<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">  
             <input type="radio" name="language" value="English"> English<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">      
             <input type="radio" name="language" value="Romanian"> Romanian<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="language" value="French"> French<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="language" value="German"> German<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="language" value="Spanish"> Spanish<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="language" value="Japanese"> Japanese<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="language" value="Mandarin"> Mandarin
-          </form>
+            <span class="checkmark"></span>
+          </label>
         </div>
-        <div>
+        <div class="filters">
           <h4>Year</h4>
-          <br>
           <div id="scrollDownYears">
-            <form>
-              <input type="radio" name="year" value="All" checked> All<br>
-              <input type="radio" name="year" value="1970"> 1970<br>
-              <input type="radio" name="year" value="1971"> 1971<br>
-              <input type="radio" name="year" value="1972"> 1972<br>
-              <input type="radio" name="year" value="1973"> 1973<br>
-              <input type="radio" name="year" value="1974"> 1974<br>
-              <input type="radio" name="year" value="1975"> 1975<br>
-              <input type="radio" name="year" value="1976"> 1976<br>
-              <input type="radio" name="year" value="1977"> 1977<br>
-              <input type="radio" name="year" value="1978"> 1978<br>
-              <input type="radio" name="year" value="1979"> 1979<br>
-              <input type="radio" name="year" value="1980"> 1980<br>
-              <input type="radio" name="year" value="1981"> 1981<br>
-              <input type="radio" name="year" value="1982"> 1982<br>
-              <input type="radio" name="year" value="1983"> 1983<br>
-              <input type="radio" name="year" value="1984"> 1984<br>
-              <input type="radio" name="year" value="1985"> 1985<br>
-              <input type="radio" name="year" value="1986"> 1986<br>
-              <input type="radio" name="year" value="1987"> 1987<br>
-              <input type="radio" name="year" value="1988"> 1988<br>
-              <input type="radio" name="year" value="1989"> 1989<br>
-              <input type="radio" name="year" value="1990"> 1990<br>
-              <input type="radio" name="year" value="1991"> 1991<br>
+            <label class="container-radio">
+              <input type="radio" name="year" value="All" checked> All<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">      
+              <input type="radio" name="year" value="1970"> 1970<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">          
+              <input type="radio" name="year" value="1971"> 1971<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1972"> 1972<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">  
+              <input type="radio" name="year" value="1973"> 1973<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1974"> 1974<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1975"> 1975<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1976"> 1976<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1977"> 1977<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1978"> 1978<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1979"> 1979<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1980"> 1980<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1981"> 1981<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1982"> 1982<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1983"> 1983<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1984"> 1984<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1985"> 1985<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1986"> 1986<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1987"> 1987<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1988"> 1988<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1989"> 1989<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1990"> 1990<br>  
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
+              <input type="radio" name="year" value="1991"> 1991<br> 
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1992"> 1992<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1993"> 1993<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1994"> 1994<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1995"> 1995<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1996"> 1996<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1997"> 1997<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1998"> 1998<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="1999"> 1999<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2000"> 2000<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2001"> 2001<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2002"> 2002<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2003"> 2003<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2004"> 2004<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2005"> 2005<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2006"> 2006<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2007"> 2007<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2008"> 2008<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2009"> 2009<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2010"> 2010<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2011"> 2011<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2012"> 2012<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2013"> 2013<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2014"> 2014<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2015"> 2015<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2016"> 2016<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2017"> 2017<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2018"> 2018<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2019"> 2019<br>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">
               <input type="radio" name="year" value="2020"> 2020
-            </form>
+              <span class="checkmark"></span>
+            </label>         
           </div>
         </div>
-        <div>
+        <div class="filters">
           <h4>Country</h4>
-          <br>
-          <form>
+          <label class="container-radio">
             <input type="radio" name="country" value="All" checked> All<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="UK"> UK<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="USA"> USA<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="Romania"> Romania<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="Denmark"> Denmark<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="Philippines"> Philippines<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-radio">
             <input type="radio" name="country" value="Japan"> Japan
-          </form>
+            <span class="checkmark"></span>
+          </label>
         </div>
       </div>
     </aside>

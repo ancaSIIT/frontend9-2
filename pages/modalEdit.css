@@ -17,7 +17,6 @@ body {
   overflow: auto;
   background-color: rgba(192, 192, 192, 0.5);
   margin: 0 auto;
-
 }
 
 .modal-wrapper {
@@ -35,16 +34,23 @@ body {
   border-top-right-radius: 10px;
   box-shadow: 1px 3px 10px rgb(20, 29, 40);
 }
+
+.modal-header > p {
+  color: white;
+}
+
 .logo-edit {
   color: red;
   margin: 18px;
 }
+
 .edit-close {
   color: white;
   margin: 10px;
   padding: 0;
   cursor: pointer;
 }
+
 form.inputs-form {
   justify-content: space-evenly;
 }
@@ -68,7 +74,6 @@ form.inputs-form input:invalid {
   border: 1px solid rgb(20, 29, 40);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-
 }
 
 button.save-button {

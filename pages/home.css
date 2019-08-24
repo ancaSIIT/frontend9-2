@@ -51,6 +51,10 @@ input[type="search"] {
   color: white;
   border: none;
 }
+#search-error-message {
+  color: #FF0000;
+  display: none;
+}
 
 button {
   padding: 7px;
@@ -90,7 +94,21 @@ section {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.no-results-message {
+  
+  font-size: 20px;
+  font-weight: bold;
+  color:crimson;
+  padding: 20px;
+  margin-left:5px;
+}
+.no-results-message-s {
+  font-size: 35px;
+  font-weight: bold;
+  color:crimson;
+  padding: 30px;
+  margin-left:5px;
+}
 #movie-template {
   display: none;
 }
@@ -148,19 +166,88 @@ section {
 
 aside {
   margin-top: 30px;
-  /* height: 100%; */
   width: 240px;
   border: 2px solid black;
   background: linear-gradient(to top, black, red, black);
-  box-shadow: 4px 20px 25px -12px rgba(186, 140, 2, 1);
+  box-shadow: 1px 3px 10px rgb(20, 29, 40);
   z-index: 4;
+}
+#add-filters{
+  font-family:  serif;
+  font-size: 17px;
+  margin-left: 10px;
+  text-shadow: 5px 5px black;
+}
+.filters>h4 {
+  font-family:  serif;
+  font-size: 25px;
+  margin-left: 10px;
+  border-bottom: 4px solid black;
+  text-shadow: 2px 2px black;
 }
 .reset-button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-left: 90px;
+  margin-left: 80px;
 }
+.container-radio{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-shadow: 1px 1px black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background:linear-gradient(to bottom, black, rgb(20, 29, 40), black);
+  border-radius: 50%;
+}
+.container-radio:hover input ~ .checkmark {
+  background-color: rgb(189, 124, 124);
+}
+.container-radio input:checked ~ .checkmark {
+  background-color: darkred;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container-radio input:checked ~ .checkmark:after {
+  display: block;
+  align-items: center;
+}
+
+.container-radio .checkmark:after {
+ top: 3px;
+ left: 3px;
+ width: 9px;
+ height: 9px;
+ border-radius: 50%;
+ background: black;
+ vertical-align: middle;
+ border: 3px solid red;
+}
+
+
 #scrollDownYears {
   max-height: 200px;
   overflow-y: scroll;
@@ -184,8 +271,6 @@ aside {
 #scrollDownYears::-webkit-scrollbar-thumb:hover {
   background: black;
 }
-
-
 
 footer {
   height: 200px;
