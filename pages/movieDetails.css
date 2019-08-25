@@ -377,7 +377,7 @@ flex-grow: 1;
   color: white;
 }
 
-@media (width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 768px){
   .container,
   .wrapper-border {
     padding: 2px;
@@ -401,7 +401,7 @@ flex-grow: 1;
   }
 }
 
-@media (width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .header-left p {
     display: none;
   }
