@@ -113,6 +113,7 @@ document.querySelector(".login-close").addEventListener("click", function() {
 document.querySelector(".message a").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "flex";
   document.querySelector(".login-modal").style.display = "none";
+  document.querySelector(".loginForm").reset();
 });
 
 //logout Button
@@ -188,8 +189,7 @@ registerBtn.addEventListener("click", function(e) {
         localStorage.setItem("user", username);
         document.querySelector(".reg-modal").style.display = "none";
         verifyLoginHome();
-        document.getElementById("regUsername").value = "";
-        document.getElementById("regPassword").value = "";
+        document.querySelector(".reg-content form").reset();
         messageElement.style.display = "none";
       } else {
         messageElement.innerHTML = data.message;
@@ -201,9 +201,11 @@ registerBtn.addEventListener("click", function(e) {
 
 document.querySelector(".reg-close").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "none";
+  document.querySelector(".reg-content form").reset();
 });
 
 document.querySelector(".messageb a").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
   document.querySelector(".reg-modal").style.display = "none";
+  document.querySelector(".reg-content form").reset();
 });
