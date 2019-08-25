@@ -98,7 +98,7 @@ button.close-button {
     margin: 5px;
   }
   form input[type="text"] {
-    margin: 5px;
+    /*margin: 5px;*/
   }
 }
 

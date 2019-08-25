@@ -42,6 +42,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: red;
+}
+
 input[type="search"] {
   width: 60%;
   height: 30px;
