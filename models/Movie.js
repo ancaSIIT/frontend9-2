@@ -14,20 +14,20 @@ class Movie {
   }
 }
 
-Movie.prototype.update = function (data) {
+Movie.prototype.update = function(data) {
   return fetch(`${baseUrl}/movies/${data.id}`, {
     method: "PUT",
     body: JSON.stringify(data),
     headers: {
       "Content-type": "application/json",
-      "x-Auth-Token": "FsfNX_3y2sYi-7kDThIBK7YcxkoUbGfA" //localStorage.getItem("accessToken")
+      "x-Auth-Token": localStorage.getItem("accessToken")
     }
-  }).then(function (response) {
+  }).then(function(response) {
     return response.json();
   });
 };
 
-Movie.prototype.delete = function () {
+Movie.prototype.delete = function() {
   let url = `${baseUrl}/movies/${this.id}`;
 
   return fetch(url, {
@@ -36,7 +36,7 @@ Movie.prototype.delete = function () {
       "Content-Type": "application/json",
       "x-Auth-Token": localStorage.getItem("accessToken")
     }
-  }).then(function (response) {
+  }).then(function(response) {
     return response.text();
   });
-}
+};

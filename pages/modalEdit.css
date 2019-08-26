@@ -94,11 +94,11 @@ button.close-button {
   .modal-wrapper {
     width: 320px;
   }
-  form label {
-    margin: 5px;
+  form.inputs-form label {
+    margin: 2px;
   }
-  form input[type="text"] {
-    /*margin: 5px;*/
+  form.inputs-form input[type="text"] {
+    margin: 2px;
   }
 }
 
