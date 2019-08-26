@@ -28,14 +28,13 @@ Movie.prototype.update = function (data) {
 };
 
 Movie.prototype.delete = function () {
-  var url = `${baseUrl}/movies/${this.id}`;
+  let url = `${baseUrl}/movies/${this.id}`;
 
   return fetch(url, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "x-Auth-Token": "9WnI_tKZbrC8fDB8FbL5gfFPcJsE8M9n"
-      // "x-Auth-Token": localStorage.getItem("accessToken")
+      "x-Auth-Token": localStorage.getItem("accessToken")
     }
   }).then(function (response) {
     return response.text();
