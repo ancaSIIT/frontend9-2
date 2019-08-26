@@ -260,11 +260,17 @@ document.querySelector("#btnLogin").addEventListener("click", function(e) {
 document.querySelector(".login-close").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "none";
   document.querySelector(".loginForm").reset();
+  document.querySelector(".loginValidateMessage").style.display = "none";
+  document.getElementById("username").style.border = "1px solid black";
+  document.getElementById("password").style.border = "1px solid black";
 });
 document.querySelector(".message a").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "flex";
   document.querySelector(".login-modal").style.display = "none";
   document.querySelector(".loginForm").reset();
+  document.querySelector(".loginValidateMessage").style.display = "none";
+  document.getElementById("username").style.border = "1px solid black";
+  document.getElementById("password").style.border = "1px solid black";
 });
 
 //Register Button
@@ -339,12 +345,18 @@ registerBtn.addEventListener("click", function(e) {
 document.querySelector(".reg-close").addEventListener("click", function() {
   document.querySelector(".reg-modal").style.display = "none";
   document.querySelector(".reg-content form").reset();
+  document.querySelector(".registerValidateMessage").style.display = "none";
+  document.getElementById("regUsername").style.border = "1px solid black";
+  document.getElementById("regPassword").style.border = "1px solid black";
 });
 
 document.querySelector(".messageb a").addEventListener("click", function() {
   document.querySelector(".login-modal").style.display = "flex";
   document.querySelector(".reg-modal").style.display = "none";
   document.querySelector(".reg-content form").reset();
+  document.querySelector(".registerValidateMessage").style.display = "none";
+  document.getElementById("regUsername").style.border = "1px solid black";
+  document.getElementById("regPassword").style.border = "1px solid black";
 });
 
 //reset button
