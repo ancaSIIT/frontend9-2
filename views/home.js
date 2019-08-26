@@ -369,4 +369,8 @@ function resetFilter() {
   let countryEl = document.getElementsByName("country");
   for(let i=0;i<countryEl.length;i++)
   countryEl[0].checked = true;
+
+  document.querySelector(".search-value").value =""
+  getAndDisplayMovies();
+
 }

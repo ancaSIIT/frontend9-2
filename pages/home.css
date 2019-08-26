@@ -43,7 +43,7 @@ header {
   margin: 0 10px 0 0;
 }
 
-input[type="search"] {
+.search-value {
   width: 60%;
   height: 30px;
   font-size: 14px;
@@ -51,7 +51,6 @@ input[type="search"] {
   color: white;
   border: none;
 }
-
 #search-error-message {
   color: #FF0000;
   display: none;
